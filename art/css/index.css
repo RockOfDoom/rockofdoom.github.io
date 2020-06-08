@@ -47,3 +47,26 @@ div {
   color: black;
   background-color: white;
 }
+
+.artdiv {
+  float: left;
+  width: 20vw;
+  height: auto;
+  margin: 3% 3% 3% 0%;
+  transition: width 0.5s;
+}
+
+.artdiv img {
+  width: 20vw;
+  height: auto;
+  transition: width 0.5s;
+}
+
+.artdiv:hover {
+  width: 25vw;
+  margin: 3% 3% 3% 0%;
+}
+
+.artdiv img:hover {
+  width: 25vw;
+}
