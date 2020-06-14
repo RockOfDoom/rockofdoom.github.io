@@ -78,6 +78,8 @@ div {
   height: auto;
   margin: 3% 3% 3% 0%;
   transition: width 0.1s;
+  line-height: 130%;
+  letter-spacing: 0.2px;
 }
 
 .artdiv img {

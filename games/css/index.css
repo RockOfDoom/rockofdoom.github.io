@@ -78,6 +78,7 @@ div {
   margin-bottom: 4vh;
   transition: padding-left .1s;
   line-height: 130%;
+  letter-spacing: 0.2px;
 }
 
 .gamediv:hover {
