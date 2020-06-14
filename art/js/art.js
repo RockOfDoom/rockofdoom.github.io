@@ -11,9 +11,9 @@ $(".artdiv").hover(function() {
 //allows the detailed art displays to be revealed when an artdiv is clicked on
 $(".artdiv").children("#x").toggleClass("hidden");
 $(".artdiv").children("p").toggleClass("phidden");
-$(".artdiv").click(function(){
+$(".artdiv").children("img").click(function(){
   $("div#output").addClass("showing");
-  $("#output").html($(this).html());
+  $("#output").html($(this).parent().html());
   $("#output").children().removeClass("hidden");
   $("#output").children().removeClass("enlarged");
   $("#output").children().removeClass("norm");
