@@ -1,5 +1,16 @@
+@font-face {
+  font-family: scriptina;
+  src: url(../../assets/scriptina.ttf);
+}
+
+@font-face {
+  font-family: publicSans;
+  src: url(../../assets/PublicSans-Regular.otf);
+}
+
 body {
   background-color: black;
+  font-family: publicSans;
 }
 
 div {
@@ -11,22 +22,35 @@ div {
 
 #title h1 {
   color: #ccae28;
-  font-style: italic;
+  text-shadow: -2px 2px 1px black;
+  letter-spacing: 3px;
   font-size: 400%;
-  margin-top: 50px;
+  margin-top: -35px;
+  font-family: scriptina;
+  font-style: italic;
 }
 
 #title h2 {
-  color: #958db7;
+  text-shadow: -1px 1px 1px black, 1px -1px 1px black, 1px 1px 1px black, -1px -1px 1px black;
   font-size: 90%;
-  margin-top: -48px;
+  margin-top: -90px;
+  font-style: italic;
+  z-index: 1;
+  position: relative;
+}
+
+#contents {
+  letter-spacing: 0.2px;
+  color: #ebe8fc;
+  line-height: 200%;
 }
 
 #crescent {
   height: 70px;
   width: 70px;
   float: left;
-  margin-right: -50px;
+  margin-right: -59px;
+  margin-top: 65px;
 }
 
 #navigation a {
@@ -39,7 +63,7 @@ div {
 }
 
 #navigation a.selected {
-  color: #f7e288;
+  color: black;
   background-color: #958db7;
 }
 
