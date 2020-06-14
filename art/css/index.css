@@ -82,7 +82,7 @@ div {
   width: 20vw;
   height: auto;
   margin: 1% 1.5% 3% 1.5%;
-  transition: width 0.5s;
+  transition: width 0.5s, margin 0.5s;
   line-height: 130%;
   letter-spacing: 0.2px;
 }
@@ -92,19 +92,40 @@ div {
   transition: width 0.25s;
 }
 
+.artdiv p {
+  transition: margin-top 0.5s, margin-bottom 0.15s, width 0.25s;
+  margin-top: -5px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  background-color: #1e1626;
+  width: 23vw;
+  padding: 0px;
+  border-top: 3vh;
+  border-right: 1vw;
+  border-left: 1vw;
+  border-bottom: 3vh;
+  border-style: solid;
+  border-color: #1e1626;
+}
+
 .norm {
   width: 20vw;
 }
 
 .enlarged {
   width: 25vw;
+  position: relative;
+  z-index: 2;
 }
 
 #output {
   color: black;
+  text-align: center;
   background-color: white;
   margin-left: 2.5vw;
   width: 95%;
+  position: absolute;
 }
 
 #output img {
@@ -136,6 +157,15 @@ div {
 
 .hidden {
   display: none;
+}
+
+p.phidden {
+  padding: 0px;
+  border: none;
+  height: 0px;
+  width: 18vw;
+  margin-top: -150px;
+  margin-bottom: 150px;
 }
 
 .display {

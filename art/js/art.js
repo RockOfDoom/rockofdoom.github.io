@@ -1,19 +1,23 @@
 //javascript/jQuery program for manipulating and displaying the Midnight House's Art page.
 
 //allows artdiv displays to change size when hovered over
-$(".artdiv").children().toggleClass("norm");
+$(".artdiv").children(":not(p)").toggleClass("norm");
 $(".artdiv").hover(function() {
   $(this).toggleClass("enlarged");
-  $(this).children().toggleClass("enlarged");
+  $(this).children(":not(p)").toggleClass("enlarged");
+  $(this).children("p").toggleClass("phidden");
 });
 
 //allows the detailed art displays to be revealed when an artdiv is clicked on
-$(".bigdisplay").children().toggleClass("hidden");
+$(".artdiv").children("#x").toggleClass("hidden");
+$(".artdiv").children("p").toggleClass("phidden");
 $(".artdiv").click(function(){
   $("div#output").addClass("showing");
-  $("#output").html($(this).children(".bigdisplay").html());
-  $("#output").children().toggleClass("hidden");
-  $("#output").children().toggleClass("display");
+  $("#output").html($(this).html());
+  $("#output").children().removeClass("hidden");
+  $("#output").children().removeClass("enlarged");
+  $("#output").children().removeClass("norm");
+  $("#output").children().addClass("display");
   window.scrollTo(0, 365);
 
   //close display
