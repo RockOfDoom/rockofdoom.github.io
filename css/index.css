@@ -47,3 +47,24 @@ div {
   color: black;
   background-color: white;
 }
+
+.contact {
+  background-color: #958db7;
+  padding: 2px;
+  border-radius: 5px;
+  width: 107px;
+}
+
+.contact:hover {
+  background-color: white;
+}
+
+.contact img {
+  width: 10px;
+  height: 10px;
+}
+
+.contact a {
+  color: black;
+  text-decoration: none;
+}

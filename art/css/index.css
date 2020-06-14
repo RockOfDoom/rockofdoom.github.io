@@ -53,13 +53,13 @@ div {
   width: 20vw;
   height: auto;
   margin: 3% 3% 3% 0%;
-  transition: width 0.5s;
+  transition: width 0.1s;
 }
 
 .artdiv img {
   width: 20vw;
   height: auto;
-  transition: width 0.5s;
+  transition: width 0.1s;
 }
 
 .artdiv:hover {

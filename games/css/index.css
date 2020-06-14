@@ -52,11 +52,11 @@ div {
   margin-left: 5vw;
   margin-top: 1vh;
   margin-bottom: 4vh;
-  transition: margin-left .5s;
+  transition: padding-left .1s;
 }
 
 .gamediv:hover {
-  margin-left: 7vw;
+  padding-left: 2vw;
 }
 
 .gamediv a {
