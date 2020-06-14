@@ -72,27 +72,72 @@ div {
   background-color: white;
 }
 
+#art {
+  text-align: center;
+}
+
 .artdiv {
-  float: left;
+  display: inline-block;
+  text-align: left;
   width: 20vw;
   height: auto;
-  margin: 3% 3% 3% 0%;
-  transition: width 0.1s;
+  margin: 1% 1.5% 3% 1.5%;
+  transition: width 0.5s;
   line-height: 130%;
   letter-spacing: 0.2px;
 }
 
 .artdiv img {
-  width: 20vw;
   height: auto;
-  transition: width 0.1s;
+  transition: width 0.25s;
 }
 
-.artdiv:hover {
-  width: 25vw;
-  margin: 3% 3% 3% 0%;
+.norm {
+  width: 20vw;
 }
 
-.artdiv img:hover {
+.enlarged {
   width: 25vw;
+}
+
+#output {
+  color: black;
+  background-color: white;
+  margin-left: 2.5vw;
+  width: 95%;
+}
+
+#output img {
+  width: 100%;
+  height: auto;
+}
+
+#output p {
+  margin: 2%;
+}
+
+#x {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  border: solid;
+  border-color: black;
+  border-radius: 25%;
+}
+
+.showing {
+  border: solid;
+  border-color: white;
+  border-width: 1%;
+  border-radius: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.display {
+  display: inline-block;
 }
