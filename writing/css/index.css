@@ -39,6 +39,10 @@ div {
   position: relative;
 }
 
+#navigation {
+  text-align: center;
+}
+
 #contents {
   letter-spacing: 0.2px;
   color: #ebe8fc;
@@ -57,7 +61,7 @@ div {
   font-size: 150%;
   color: white;
   text-decoration: none;
-  margin: 1% 13% 5% 4%;
+  margin: 1% 6vw 5% 6vw;
   border-radius: 25px;
   padding: 10px;
 }
