@@ -79,10 +79,16 @@ div {
 .gamediv {
   margin-left: 5vw;
   margin-top: 1vh;
-  margin-bottom: 4vh;
+  margin-bottom: 2vh;
   transition: padding-left 0.1s, background-color .25s;
   line-height: 130%;
   letter-spacing: 0.2px;
+  padding-right: 1vw;
+  background-color: black;
+  border-width: 2%;
+  border-style: solid;
+  border-color: black;
+  border-radius: 25px;
 }
 
 .gamediv:hover {
