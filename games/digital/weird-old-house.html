@@ -30,10 +30,14 @@ tw-link {
 }
 
 tw-link.visited {
-  color: #80e5fc;
+  color: #fcf6a9;
 }
 
 tw-link:hover {
+  color: #f9b8e6;
+}
+
+tw-link.visited:hover {
   color: #f9b8e6;
 }
 
@@ -71,7 +75,7 @@ h1 {
 
 h2 {
   text-align: center;
-  margin-top: -10%;
+  margin-top: -80px;
   margin-bottom: 25%;
   font-size: 75%;
   font-style: italic;
@@ -89,7 +93,7 @@ h2 {
 [[And that door that leads to nowhere seems to work just fine.-&gt;Title Page]]]]]]</tw-passagedata><tw-passagedata pid="2" name="Title Page" tags="" position="409,320" size="100,100">&lt;h1&gt;Weird Old House&lt;/h1&gt;
 &lt;h2&gt;a game by Alex Basinski&lt;/h2&gt;
 
-[[Open the door.-&gt;Front Lawn]]</tw-passagedata><tw-passagedata pid="3" name="Front Lawn" tags="" position="405,471" size="100,100">(if: (history:) contains &quot;Front Lawn&quot;)[In front of you, there is an old house.
+[[Open the door.-&gt;Front Lawn]]</tw-passagedata><tw-passagedata pid="3" name="Front Lawn" tags="" position="404,471" size="100,100">(if: (history:) contains &quot;Front Lawn&quot;)[In front of you, there is an old house.
 
 It has aged visibly, but not ungracefully: the paint is not too chipped, and it seems to be structurally sound.
 
@@ -134,7 +138,7 @@ The house has a single front door, and a garage that looks (link-reveal: &quot;r
 
 (set: $currentroom to &#39;frontlawn&#39;)</tw-passagedata><tw-passagedata pid="4" name="Living Room" tags="" position="437,823" size="100,100">(if: (history:) contains &quot;Living Room&quot;)[You walk into the living room.
 
-Despite the dust an disarray of the place, it still manages to feel cozy. There is a carpet laid down in the center of the room, on top of which a coffee table sits.
+Despite the dust and disarray of the place, it still manages to feel cozy. There is a carpet laid down in the center of the room, on top of which a coffee table sits.
 
 A couch and some comfortable-looking seats are arranged around the coffee table in a semi-circle. Sitting on a small table across the room, facing the seats, is [[an old CRT television-&gt;Old TV]]—old even for a home from this era. It&#39;s glinting at you faintly.
 
@@ -147,7 +151,7 @@ There is an open passageway that leads back into the hallway, and opposite that 
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You walk into (link-reveal: &quot;the living room.&quot;)[
 
-Despite the dust an disarray of the place, it still manages to feel cozy. There is a carpet laid down in the center of the room, on top of which (link-reveal: &quot;a coffee table sits.&quot;)[
+Despite the dust and disarray of the place, it still manages to feel cozy. There is a carpet laid down in the center of the room, on top of which (link-reveal: &quot;a coffee table sits.&quot;)[
 
 A couch and some comfortable-looking seats are arranged around the coffee table in a semi-circle. Sitting on a small table across the room, facing the seats, is [[an old CRT television-&gt;Old TV]]—old even for a home from this era. (link-reveal: &quot;It&#39;s glinting at you faintly.&quot;)[
 
@@ -292,7 +296,7 @@ The only entrance to the room is (link-reveal: &quot;the door you came through.&
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]
 
-(set: $currentroom to &#39;alanoffice&#39;)</tw-passagedata><tw-passagedata pid="9" name="Caern&#39;s Office" tags="" position="282,735" size="100,100">(if: (history:) contains &quot;Cairn&#39;s Office&quot;)[You enter what looks to be some sort of studio.
+(set: $currentroom to &#39;alanoffice&#39;)</tw-passagedata><tw-passagedata pid="9" name="Caern&#39;s Office" tags="" position="282,735" size="100,100">(if: (history:) contains &quot;Caern&#39;s Office&quot;)[You enter what looks to be some sort of studio.
 
 The room is filled to the brim with dead plants. Potted plants of every size, shape, and species cover most of the walls: some placed on the floor, some hanging from hooks on the walls or the ceiling.
 
@@ -326,39 +330,133 @@ There is a window looking out into the empty void around the house, and the only
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]]
 
-(set: $currentroom to &#39;caernoffice&#39;)</tw-passagedata><tw-passagedata pid="10" name="Bedroom" tags="" position="274,620" size="100,100">You are in the bedroom.(if: $cornerthing is &#39;bedroom&#39;)[
+(set: $currentroom to &#39;caernoffice&#39;)</tw-passagedata><tw-passagedata pid="10" name="Bedroom" tags="" position="273,619" size="100,100">(if: (history:) contains &quot;Bedroom&quot;)[You step into a quiet bedroom.
+
+It somehow feels dimmer in here than it does in the rest of the house, like it&#39;s the middle of the night and you should be sleeping.
+
+There is a queen-sized bed in the middle of the room that has been neatly made. It looks dusty and unused.
+
+There is a large dresser, and a closet that is lying open. They both look thoroughly ransacked.
+
+There is a nightstand next to the bed. (if: $hasclock is false)[Sitting on top of it is [[a broken alarm clock-&gt;Get Alarm Clock]], which draws your attention. ]Its drawer is halfway open, and empty.
+
+There is a door leading into a master bathroom, and a door leading back into the hallway.(if: $cornerthing is &#39;bedroom&#39;)[
 
 [[There is something in the corner.]]]
 
-[[Master Bath]]
-[[Front Hallway]]
+[[Enter master bathroom.-&gt;Master Bath]]
+[[Go back into hallway.-&gt;Front Hallway]]
 
-(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You step into (link-reveal: &quot;a quiet bedroom.&quot;)[
 
-(set: $currentroom to &#39;bedroom&#39;)</tw-passagedata><tw-passagedata pid="11" name="Garage" tags="" position="296,512" size="100,100">You are in the garage.(if: $cornerthing is &#39;garage&#39;)[
+It somehow feels dimmer in here than it does in the rest of the house, like it&#39;s the middle of the night and (link-reveal: &quot;you should be sleeping.&quot;)[
 
-[[There is something in the corner.]]]
+There is a queen-sized bed in the middle of the room that has been neatly made. (link-reveal: &quot;It looks dusty and unused.&quot;)[
 
-(cond: $atticopen is true, &quot;[[Attic]]&quot;, &quot;There is a trapdoor to the attic, but it seems to be locked from the inside.&quot;)
-[[Front Hallway]]
+There is a large dresser, and a closet that is lying open. They both look (link-reveal: &quot;thoroughly ransacked.&quot;)[
 
-(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)
+There is a nightstand next to the bed. (if: $hasclock is false)[Sitting on top of it is [[a broken alarm clock-&gt;Get Alarm Clock]], which draws your attention. ]Its drawer is halfway open, (link-reveal: &quot;and empty.&quot;)[
 
-(set: $currentroom to &#39;garage&#39;)</tw-passagedata><tw-passagedata pid="12" name="Attic" tags="" position="270,386" size="100,100">You are in the attic.(if: $cornerthing is &#39;attic&#39;)[
-
-[[There is something in the corner.]]]
-
-[[Garage]]
-
-(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)
-
-(set: $currentroom to &#39;attic&#39;)</tw-passagedata><tw-passagedata pid="13" name="Master Bath" tags="" position="166,622" size="100,100">You are in the Master Bath(if: $cornerthing is &#39;masterbath&#39;)[
+There is a door leading into a master bathroom, and a door leading (link-reveal: &quot;back into the hallway.&quot;)[(if: $cornerthing is &#39;bedroom&#39;)[
 
 [[There is something in the corner.]]]
 
-[[Bedroom]]
+[[Enter master bathroom.-&gt;Master Bath]]
+[[Go back into hallway.-&gt;Front Hallway]]
 
-(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]]
+
+(set: $currentroom to &#39;bedroom&#39;)</tw-passagedata><tw-passagedata pid="11" name="Garage" tags="" position="279,504" size="100,100">(if: (history:) contains &quot;Garage&quot;)[You are now in the garage.
+
+In the center of the room is an [[old pickup truck-&gt;Broken-Down Pickup Truck]]. It is perfectly still, it almost looks welded to the ground.
+
+On the side wall of the garage, there are shelves and hooks on which various tools rest. They have all aged relatively gracefully, but they have still definitely seen better days.
+
+There is a table standing against the house-side wall of the garage with a half-finished woodworking project on it. You can&#39;t tell what it was, as it has fallen apart in the time since it was first assembled.
+
+There is a trapdoor that you presume leads into the attic(cond: $atticopen is false, &quot;, but you can&#39;t get it open. It&#39;s locked from the inside&quot;, &quot;&quot;). The only other working door is the one you came through, as the garage&#39;s main entrace is stuck closed.(if: $cornerthing is &#39;garage&#39;)[
+
+[[There is something in the corner.]]]
+
+(cond: $atticopen is true, &quot;[[Climb into attic.-&gt;Attic]]&quot;, &quot;~~Climb into attic.~~&quot;)
+[[Go back into hallway.-&gt;Front Hallway]]
+
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You are now in (link-reveal: &quot;the garage.&quot;)[
+
+In the center of the room is an [[old pickup truck-&gt;Broken-Down Pickup Truck]]. It is perfectly still, it almost looks (link-reveal: &quot;welded to the ground.&quot;)[
+
+On the side wall of the garage, there are shelves and hooks on which various tools rest. They have all aged relatively gracefully, but they have still (link-reveal: &quot;definitely seen better days.&quot;)[
+
+There is a table standing against the house-side wall of the garage with a half-finished woodworking project on it. You can&#39;t tell what it was, as it has fallen apart in the time (link-reveal: &quot;since it was first assembled.&quot;)[
+
+There is a trapdoor that you presume leads into the attic(cond: $atticopen is false, &quot;, but you can&#39;t get it open. It&#39;s locked from the inside&quot;, &quot;&quot;). The only other working door is the one you came through, as the garage&#39;s main entrace is (link-reveal: &quot;stuck closed.&quot;)[(if: $cornerthing is &#39;garage&#39;)[
+
+[[There is something in the corner.]]]
+
+(cond: $atticopen is true, &quot;[[Climb into attic.-&gt;Attic]]&quot;, &quot;~~Climb into attic.~~&quot;)
+[[Go back into hallway.-&gt;Front Hallway]]
+
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]
+
+(set: $currentroom to &#39;garage&#39;)</tw-passagedata><tw-passagedata pid="12" name="Attic" tags="" position="270,386" size="100,100">(if: (history:) contains &quot;Attic&quot;)[You climb up into the attic.
+
+It&#39;s brighter up here, relatively speaking. You get the impression of sunlight streaming in through the window in the roof, even though there is neither sun nor light here.
+
+The attic is mostly take up by makeshift living space. There is a circular carpet in the middle of the room, upon which a number of beanbag chairs sit. There are several mattresses pushed to one side of the room.
+
+Sitting precisely in the center of the carpet is a jewelry box. (if: $hascrescent is false)[A [[necklace in the shape of a crescent moon-&gt;Get Crescent Necklace]] glints at you from inside. ]Its lid is covered in dust.
+
+The only entrance to this room is the trapdoor you came through.(if: $cornerthing is &#39;attic&#39;)[
+
+[[There is something in the corner.]]]
+
+[[Climb back down into garage.-&gt;Garage]]
+
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You climb up into (link-reveal: &quot;the attic.&quot;)[
+
+It&#39;s brighter up here, relatively speaking. You get the impression of sunlight streaming in through the window in the roof, even though (link-reveal: &quot;there is neither sun nor light here.&quot;)[
+
+The attic is mostly take up by makeshift living space. There is a circular carpet in the middle of the room, upon which a number of beanbag chairs sit. There are several mattresses (link-reveal: &quot;pushed to one side of the room.&quot;)[
+
+Sitting precisely in the center of the carpet is a jewelry box. (if: $hascrescent is false)[A [[necklace in the shape of a crescent moon-&gt;Get Crescent Necklace]] glints at you from inside. ](link-reveal: &quot;Its lid is covered in dust.&quot;)[
+
+The only entrance to this room is (link-reveal: &quot;the trapdoor you came through.&quot;)[(if: $cornerthing is &#39;attic&#39;)[
+
+[[There is something in the corner.]]]
+
+[[Climb back down into garage.-&gt;Garage]]
+
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]
+
+(set: $currentroom to &#39;attic&#39;)</tw-passagedata><tw-passagedata pid="13" name="Master Bath" tags="" position="171,620" size="100,100">(if: (history:) contains &quot;Master Bath&quot;)[You step into the master bathroom.
+
+It looks like it was nice enough, once, with a stone countertop double-sink and a separate bath and shower. Now, though, parts of the stone are slightly cracked and the dust that pervades the whole house coats everything.
+
+There are a number of plants hanging around the room that would have, in life, made it feel lush and bright in here. But now they are dead, lending the room a sort of dry pallor.
+
+Hanging above the sink is [[a long mirror-&gt;Cloudy Mirror]], the length of the countertop. Its surface is clouded, but it still shines to you.
+
+The only entrance is the one you came through.(if: $cornerthing is &#39;masterbath&#39;)[
+
+[[There is something in the corner.]]]
+
+[[Go back into bedroom.-&gt;Bedroom]]
+
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You step into the (link-reveal: &quot;master bathroom.&quot;)[
+
+It looks like it was nice enough, once, with a stone countertop double-sink and a separate bath and shower. Now, though, parts of the stone are slightly cracked and the dust that pervades the whole house (link-reveal: &quot;coats everything.&quot;)[
+
+There are a number of plants hanging around the room that would have, in life, made it feel lush and bright in here. But now they are dead, lending the room (link-reveal: &quot;a sort of dry pallor.&quot;)[
+
+Hanging above the sink is [[a long mirror-&gt;Cloudy Mirror]], the length of the countertop. Its surface is clouded, but (link-reveal: &quot;it still shines to you.&quot;)[
+
+The only entrance is (link-reveal: &quot;the one you came through.&quot;)[(if: $cornerthing is &#39;masterbath&#39;)[
+
+[[There is something in the corner.]]]
+
+[[Go back into bedroom.-&gt;Bedroom]]
+
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]
 
 (set: $currentroom to &#39;masterbath&#39;)</tw-passagedata><tw-passagedata pid="14" name="Bathroom" tags="" position="570,799" size="100,100">(if: (history:) contains &quot;Bathroom&quot;)[You step into the bathroom.
 
@@ -390,7 +488,7 @@ There is what used to be an extensive garden in the backyard—although what it 
 
 There is a back shed towards the edge of the backyard, small and wooden. Probably for storing gardening tools.
 
-On the porch near you, there is what appears to be a workbench. It has various rusting tools laid neatly out, and a single coffee mug is sitting on the table.
+On the porch near you, there is what appears to be a workbench. It has various rusting tools laid neatly out on it.
 
 [[Sit at workbench.-&gt;Workbench]]
 [[Step out into backyard.-&gt;Back Yard]]
@@ -404,7 +502,7 @@ There is what used to be an extensive garden in the backyard—although what it 
 
 There is a back shed towards the edge of the backyard, small and wooden. (link-reveal: &quot;Probably for storing gardening tools.&quot;)[
 
-On the porch near you, there is what appears to be a workbench. It has various rusting tools laid neatly out, and a single coffee mug is (link-reveal: &quot;sitting on the table.&quot;)[
+On the porch near you, there is what appears to be a workbench. It has various rusting tools (link-reveal: &quot;laid neatly out on it.&quot;)[
 
 [[Sit at workbench.-&gt;Workbench]]
 [[Step out into backyard.-&gt;Back Yard]]
@@ -412,7 +510,7 @@ On the porch near you, there is what appears to be a workbench. It has various r
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]
 
-(set: $currentroom to &#39;backporch&#39;)</tw-passagedata><tw-passagedata pid="16" name="Workbench" tags="" position="332,996" size="100,100">(if: (history:) contains &quot;Workbench&quot;)[You sit down at the work bench.
+(set: $currentroom to &#39;backporch&#39;)</tw-passagedata><tw-passagedata pid="16" name="Workbench" tags="" position="332,996" size="100,100">(if: (history:) contains &quot;Workbench&quot;)[You sit down at the workbench.
 
 Sitting at the bench, you are facing out towards the garden. There is very little of the backyard you cannot see from here.
 
@@ -420,7 +518,7 @@ The tools in front of you look like they haven&#39;t been touched in centuries. 
 
 [[Stand back up.-&gt;Back Porch]]
 
-(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You sit down (link-reveal: &quot;at the work bench.&quot;)[
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You sit down (link-reveal: &quot;at the workbench.&quot;)[
 
 Sitting at the bench, you are facing out towards the garden. (link-reveal: &quot;There is very little of the backyard you cannot see from here.&quot;)[
 
@@ -430,7 +528,7 @@ The tools in front of you look like they haven&#39;t been touched in centuries. 
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]
 
-(set: $currentroom to &#39;workbench&#39;)</tw-passagedata><tw-passagedata pid="17" name="Back Yard" tags="" position="436,1098" size="100,100">(if: (history:) contains &quot;Back Yard&quot;)[You step onto the backyard&#39;s dead grass. It crunches under your feet.
+(set: $currentroom to &#39;workbench&#39;)</tw-passagedata><tw-passagedata pid="17" name="Back Yard" tags="" position="436,1109" size="100,100">(if: (history:) contains &quot;Back Yard&quot;)[You step onto the backyard&#39;s dead grass. It crunches under your feet.
 
 It looks like the yard was once artfully landscaped, but now it is simply dead. 
 
@@ -458,7 +556,7 @@ The door the the back shed is slightly ajar, it looks like (link-reveal: &quot;t
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]
 
-(set: $currentroom to &#39;backyard&#39;)</tw-passagedata><tw-passagedata pid="18" name="Back Shed" tags="" position="438,1203" size="100,100">(if: (history:) contains &quot;Back Shed&quot;)[You step into the back shed, and immediately almost trip and fall flat on your face.
+(set: $currentroom to &#39;backyard&#39;)</tw-passagedata><tw-passagedata pid="18" name="Back Shed" tags="" position="434,1218" size="100,100">(if: (history:) contains &quot;Back Shed&quot;)[You step into the back shed, and immediately almost trip and fall flat on your face.
 
 You look down at the floor to find the culprit, and you find that...
 
@@ -481,6 +579,7 @@ You can see gardening tools and supplies lining the shelves that are attached to
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]
 
 (set: $currentroom to &#39;backshed&#39;)</tw-passagedata><tw-passagedata pid="19" name="startup" tags="startup" position="465,16" size="100,100">{(set: $itemcount to 0)
+(set: $objectcount to 0)
 (set: $currentroom to &#39;frontlawn&#39;)
 (set: $cornerthing to &#39;attic&#39;)
 (set: $atticopen to false)
@@ -493,6 +592,8 @@ You can see gardening tools and supplies lining the shelves that are attached to
 (set: $hasmug to false)
 (set: $hastrowel to false)
 (set: $hastoothbrush to false)
+(set: $hascrescent to false)
+(set: $hasclock to false)
 }</tw-passagedata><tw-passagedata pid="20" name="Inventory" tags="intro" position="793,54" size="100,100">(if: $hasnecklace is true)[ - [[Stone Necklace]]
 ](if: $hasplate is true)[ - [[Chipped Dinner Plate]]
 ](if: $hastennisball is true)[ - [[A Tennis Ball and a Tennis Ball and a Tennis Ball and a]]
@@ -501,6 +602,8 @@ You can see gardening tools and supplies lining the shelves that are attached to
 ](if: $hasmug is true)[ - [[Mug with an Eye Painted On]]
 ](if: $hastrowel is true)[ - [[Filthy Trowel]]
 ](if: $hastoothbrush is true)[ - [[7 Disposable Toothbrushes]]
+](if: $hascrescent is true)[ - [[Crescent Moon Necklace]]
+](if: $hasclock is true)[ - [[Cracked Alarm Clock]]
 ]
 
 (cond: $currentroom is &#39;frontlawn&#39;, &quot;[[Back-&gt;Front Lawn]]&quot;, $currentroom is &#39;fronthallway&#39;, &quot;[[Back-&gt;Front Hallway]]&quot;, $currentroom is &#39;backhallway&#39;, &quot;[[Back-&gt;Back Hallway]]&quot;,$currentroom is &#39;garage&#39;, &quot;[[Back-&gt;Garage]]&quot;, $currentroom is &#39;bedroom&#39;, &quot;[[Back-&gt;Bedroom]]&quot;, $currentroom is &#39;diningroom&#39;, &quot;[[Back-&gt;Dining Room]]&quot;, $currentroom is &#39;masterbath&#39;, &quot;[[Back-&gt;Master Bath]]&quot;, $currentroom is &#39;caernoffice&#39;, &quot;[[Back-&gt;Caern&#39;s Office]]&quot;, $currentroom is &#39;alanoffice&#39;, &quot;[[Back-&gt;Alan&#39;s Office]]&quot;, $currentroom is &#39;kitchen&#39;, &quot;[[Back-&gt;Kitchen]]&quot;, $currentroom is &#39;bathroom&#39;, &quot;[[Back-&gt;Bathroom]]&quot;, $currentroom is &#39;livingroom&#39;, &quot;[[Back-&gt;Living Room]]&quot;, $currentroom is &#39;backporch&#39;, &quot;[[Back-&gt;Back Porch]]&quot;, $currentroom is &#39;workbench&#39;, &quot;[[Back-&gt;Workbench]]&quot;, $currentroom is &#39;backyard&#39;, &quot;[[Back-&gt;Back Yard]]&quot;, $currentroom is &#39;backshed&#39;, &quot;[[Back-&gt;Back Shed]]&quot;, $currentroom is &#39;attic&#39;, &quot;[[Back-&gt;Attic]]&quot;, &quot;ERROR: Lost Room Location&quot;)</tw-passagedata><tw-passagedata pid="21" name="Get Stone Necklace" tags="intro" position="22,74" size="100,100">You picked up the *Stone Necklace*.
@@ -585,9 +688,11 @@ I start to]] unfasten my necklace, (text-style: &quot;blurrier&quot;)[(text-styl
 
 (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I]] drop (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[the]] necklace, (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[and turn with Alan to leave through the weird door.]]
 
-(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[It closes behind me and I don&#39;t look back.]]]
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[It closes behind me and I don&#39;t look back.]]
 
-[[Back-&gt;Stone Necklace]]</tw-passagedata><tw-passagedata pid="24" name="There is something in the corner." tags="scrying" position="270,263" size="100,100">There is nothing in the corner.
+*It looks like you don&#39;t have a strong enough connection to this item to get a proper look at its connections. You&#39;ll have to see if a specific location or object can strenghten your connection with it.*]
+
+[[Back-&gt;Stone Necklace]](set: $cornerthing to &#39;attic&#39;)</tw-passagedata><tw-passagedata pid="24" name="There is something in the corner." tags="scrying" position="271,274" size="100,100">There is nothing in the corner.
 
 It is looking at you.
 
@@ -649,11 +754,13 @@ At the end of the hallway is a bathroom, an there is an entrance to the kitchen 
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]]
 
-(set: $currentroom to &#39;backhallway&#39;)</tw-passagedata><tw-passagedata pid="27" name="Old TV" tags="intro" position="1088,60" size="100,100">An old box-set TV, complete with slightly bent antennas.
+(set: $currentroom to &#39;backhallway&#39;)</tw-passagedata><tw-passagedata pid="27" name="Old TV" tags="intro" position="1089,55" size="100,100">An old box-set TV, complete with slightly bent antennas.
 
 You can feel the connections to the TV humming...[[scry on it?-&gt;Scry on TV]]
 
-[[Back-&gt;Living Room]]</tw-passagedata><tw-passagedata pid="28" name="Chipped Dinner Plate" tags="intro" position="795,260" size="100,100">A white ceramic dinner plate with a blue lacquered edge. There’s a good sized chip missing, and a couple small fractures.
+[[Back-&gt;Living Room]]
+
+(if: (history:) contains &quot;Old TV&quot;)[](else:)[(set: $objectcount to $objectcount + 1)]</tw-passagedata><tw-passagedata pid="28" name="Chipped Dinner Plate" tags="intro" position="795,260" size="100,100">A white ceramic dinner plate with a blue lacquered edge. There’s a good sized chip missing, and a couple small fractures.
 
 You can feel the connections to the plate humming...[[scry on it?-&gt;Scry on Plate]]
 
@@ -669,7 +776,9 @@ You can feel the connections to the tennis balls humming...[[scry on them?-&gt;S
 
 You can feel the connections to the desktop humming...[[scry on it?-&gt;Scry on Desktop]]
 
-[[Back-&gt;Caern&#39;s Office]]</tw-passagedata><tw-passagedata pid="32" name="Rusted Key" tags="intro" position="798,575" size="100,100">A slightly rusted padlock key with no keychain.
+[[Back-&gt;Caern&#39;s Office]]
+
+(if: (history:) contains &quot;Overgrown Desktop&quot;)[](else:)[(set: $objectcount to $objectcount + 1)]</tw-passagedata><tw-passagedata pid="32" name="Rusted Key" tags="intro" position="798,575" size="100,100">A slightly rusted padlock key with no keychain.
 
 (cond: $currentroom is $cornerthing, &quot;You can feel the connections to the key humming...[[scry on it?-&gt;Scry on Key]]&quot;, &quot;You can feel the connections tangled up around the key...[[scry on it?-&gt;Scry on Key]]&quot;)
 
@@ -731,13 +840,13 @@ The floor is already completely covered in a pile of nearly identical tennis bal
 
 I add the ones I am holding to the pile.
 
-[[Back-&gt;A Tennis Ball and a Tennis Ball and a Tennis Ball and a]]</tw-passagedata><tw-passagedata pid="35" name="Get Tennis Balls" tags="" position="20,1069" size="100,100">You picked up *A Tennis Ball and a Tennis Ball and a Tennis Ball and a*
+[[Back-&gt;A Tennis Ball and a Tennis Ball and a Tennis Ball and a]]</tw-passagedata><tw-passagedata pid="35" name="Get Tennis Balls" tags="intro" position="20,1069" size="100,100">You picked up *A Tennis Ball and a Tennis Ball and a Tennis Ball and a*
 
 [[View in Inventory-&gt;A Tennis Ball and a Tennis Ball and a Tennis Ball and a]] 
 [[Back-&gt;Back Shed]]
 
 (set: $hastennisball to true)
-(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="36" name="Get Chipped Dinner Plate" tags="" position="19,194" size="100,100">You picked up the *Chipped Dinner Plate*.
+(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="36" name="Get Chipped Dinner Plate" tags="intro" position="19,194" size="100,100">You picked up the *Chipped Dinner Plate*.
 
 [[View in Inventory-&gt;Chipped Dinner Plate]]
 [[Back-&gt;Kitchen]]
@@ -831,7 +940,9 @@ This changes everything.](else:)[(text-style: &quot;blurrier&quot;)[(text-style:
 
 (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[But as I turn to look at Caern in shock, and he mirrors me, we&#39;re thinking what everyone else is too:]]
 
-This changes everything.]
+This changes everything.
+
+*It looks like you don&#39;t have a strong enough connection to this item to get a proper look at its connections. You&#39;ll have to see if a specific location or object can strenghten your connection with it.*]
 
 [[Back-&gt;Broken Radio]]</tw-passagedata><tw-passagedata pid="38" name="Scry on Key" tags="scrying" position="903,574" size="100,100">(if: $cornerthing is $currentroom)[The ladder to the attic is down, and the door is open. I can hear the teens talking and laughing up there. I climb up the ladder enough to poke my head into the attic.
 
@@ -853,7 +964,7 @@ The one with bright yellow hair (it HAS to be hair dye, right?) answers, &quot;O
 
 &quot;Oh, have you had other people up here?&quot; asks Nose Ring.
 
-&quot;Only once or twice, passing through like y&#39;all. That&#39;s not what we&#39;re talking about right now though, how did you get up here? Did you climb the side of my house?&quot;
+&quot;Only once or twice, passing through after getting forced out of their homes—like y&#39;all. That&#39;s not what we&#39;re talking about right now though, how did you get up here? Did you climb the side of my house?&quot;
 
 &quot;No, actually!&quot; says Yellow Hair, &quot;we got the corner thing to help us out.&quot;
 
@@ -891,7 +1002,7 @@ I climb back down the ladder.](else:)[(text-style: &quot;blurrier&quot;)[(text-s
 
 (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Oh, have you had other people up here?&quot; asks Nose Ring.]]
 
-(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Only once or twice, passing through like y&#39;all. That&#39;s not what we&#39;re talking about right now though, how did you get up here? Did you]] climb (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[the side of my]] house?&quot;
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Only once or twice, passing through after getting forced out of their homes—like y&#39;all. That&#39;s not what we&#39;re talking about right now though, how did you get up here? Did you]] climb (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[the side of my]] house?&quot;
 
 &quot;No, (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[actually!&quot; says Yellow Hair, &quot;we got the corner thing to help us out.&quot;]]
 
@@ -909,13 +1020,93 @@ I climb back down the ladder.](else:)[(text-style: &quot;blurrier&quot;)[(text-s
 
 (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Huh. glad we got a friendly ghost, then. Well, take care!&quot;]]
 
-(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I climb back down the ladder.]]]
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I climb back down the ladder.]]
 
-[[Back-&gt;Rusted Key]]</tw-passagedata><tw-passagedata pid="39" name="Scry on TV" tags="scrying" position="1192,58" size="100,100">
+*It looks like you don&#39;t have a strong enough connection to this item to get a proper look at its connections. You&#39;ll have to see if a specific location or object can strenghten your connection with it.*]
 
-[[Back-&gt;Old TV]]</tw-passagedata><tw-passagedata pid="40" name="Scry on Desktop" tags="scrying" position="1190,163" size="100,100">
+[[Back-&gt;Rusted Key]](set: $cornerthing to &#39;garage&#39;)</tw-passagedata><tw-passagedata pid="39" name="Scry on TV" tags="scrying" position="1192,58" size="100,100">I am kneeling in the dirt, using a trowel to remove weeds from my garden. It is lush and cramped, so I have to be very careful.
 
-[[Back-&gt;Overgrown Desktop]]</tw-passagedata><tw-passagedata pid="41" name="Get Broken Radio" tags="" position="16,563" size="100,100">You picked up the *Broken Radio*.
+It&#39;s hot out, so I go back up to the back porch and take a sip from the waterbottle I left on the workbench.
+
+*The shortest route between two points is a line. The fastest way to turn left is to turn left. The world is a thin gossamer sheet floating above the void. The-*
+
+Again?
+
+I sigh, and kick my filthy shoes off before stepping through the back door into the living room. Sure enough, the TV is on even though no one is in the room.
+
+I don&#39;t recognize the show or channel it&#39;s on (as usual). It&#39;s displaying a man in a sharp suit talking into the camera, although the feed is not particularly clean and there are a lot of cuts and jumps in the video.
+
+*The shortest route between two points is a circle. The fastest way to turn left is to turn right three times. The world is a thin gossamer sheet with a hole in it. The-*
+
+&quot;Alan!&quot; I call out without removing my gaze from the screen, &quot;It&#39;s happening again!&quot;
+
+Alan stumbles into the room and quickly moves over to the television.
+
+*The shortest route between two points is left. The fastest way to turn in a line is to turn right three times. The worl-*
+
+&quot;Oh, this one is *weird*.&quot; he observes.
+
+&quot;Yeah, who watches this kind of stuff?&quot; I ask him.
+
+&quot;Beats me, bug. Let me see if I can figure out which station it is-&quot;
+
+He reaches for the control knobs on the television&#39;s face, but the instant his finger makes contact the television turns off with a click.
+
+&quot;Huh.&quot; he says.
+
+&quot;Huh.&quot; I say. &quot;Do you think it&#39;s haunted?&quot;
+
+&quot;Well, if it was I would have thought we would have noticed earlier. We got this thing when we moved in 5 years ago, and it didn&#39;t do anything weird then.&quot;
+
+We sit and look at the television for a moment.
+
+&quot;Well, I think I&#39;m just going to unplug it while we&#39;re not using it.&quot; Alan concludes.
+
+&quot;That&#39;s fine by me.&quot;
+
+[[Back-&gt;Old TV]]</tw-passagedata><tw-passagedata pid="40" name="Scry on Desktop" tags="scrying" position="1190,163" size="100,100">I am filling a desktop computer with dirt.
+
+Well, that&#39;s not entirely true. I am filling the *case* of a desktop computer with dirt. It is sitting on the blue tarp in the middle of the room, so that the dirt does not get on the floor.
+
+I walk back over to my desk and consult some sketches depicting the computer case with lush, leafy vines growing out of it. I walk back over to the computer and carefully start making a hole in its side for the plants to grow through.
+
+&quot;What are you doing?&quot; Alan asks. I hadn&#39;t noticed him in the doorway.
+
+&quot;Making my next piece?&quot; I thought that would be rather obvious.
+
+Alan shakes his head and exhales sharply, like I&#39;m missing something obvious.
+
+&quot;How? How can you still be focusing on this stuff? There are bigger things going on than an art piece that only we will ever see!&quot;
+
+He sounds upset, but I&#39;m not sure why. &quot;I mean, that&#39;s true, but it&#39;s not like I can really do much about the bigger things. And this computer isn&#39;t gonna seed itself.&quot;
+
+He&#39;s becoming visibly frustrated. &quot;What do you mean you can&#39;t do much about the bigger things? This stuff affects *us!* It is *in* our *house!* It&#39;s *been* here for 2 years, and we *didn&#39;t even know!*&quot;
+
+&quot;What are you talking about?&quot;
+
+&quot;What do yo-&quot; he stops himself abruptly, and starts again. &quot;The dishes. The tennis balls. The *television*. It all matches the descriptions of the Distortion in the news. It&#39;s *already here!* And we have *no idea what it&#39;s doing to us!* What it even *is!*&quot;
+
+&quot;I mean, I know that but-&quot;
+
+&quot;But *WHAT?* Caern, I know its in your nature to go with the flow but the fact that you are just sitting here and *ignoring* all of this is just plain *stupid!* I need your help, but here you are sitting in your studio. Fucking. Playing with dirt! Like *nothing&#39;s wrong!*&quot;
+
+...
+
+...
+
+...
+
+A look of intense regret comes over his face.
+
+&quot;I&#39;m. I&#39;m sorry, I shouldn&#39;t have said that. I wasn&#39;t thinking, I, I, I know this is important to yo-&quot;
+
+&quot;Stop. I accept your apology. And I am *perfectly aware* of the fact that our home is getting...affected. But if I don&#39;t keep making my art, I feel like I am going to lose my footing and fall apart. So, if you please, I would like to finish this piece now.&quot;
+
+He nods glumly. &quot;I&#39;m sorry.&quot; he repeats.
+
+&quot;I know.&quot;
+
+[[Back-&gt;Overgrown Desktop]](set: $cornerthing to &#39;caernoffice&#39;)</tw-passagedata><tw-passagedata pid="41" name="Get Broken Radio" tags="intro" position="16,563" size="100,100">You picked up the *Broken Radio*.
 
 [[View in Inventory-&gt;Broken Radio]]
 [[Back-&gt;Alan&#39;s Office]]
@@ -925,7 +1116,125 @@ I climb back down the ladder.](else:)[(text-style: &quot;blurrier&quot;)[(text-s
 
 (cond: $hasplate is true, &quot;You can feel the connections to the mug humming...[[scry on it?-&gt;Scry on Mug]]&quot;, &quot;You can feel the connections tangled up around the mug...[[scry on it?-&gt;Scry on Mug]]&quot;)
 
-[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="43" name="Scry on Mug" tags="scrying" position="905,681" size="100,100">
+[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="43" name="Scry on Mug" tags="scrying" position="906,679" size="100,100">(if: $hasplate is true)[I look away from my computer and reach for my mug of tea. I smile smugly when I see it sitting there, exactly where I left it.
+
+Caern peeks through the doorway. &quot;Hey, have you ordered the seed for the next pro- ... Did you paint an eye on your mug?&quot;
+
+&quot;Yes!&quot; I answer cheerfully.
+
+&quot;Why?&quot;
+
+&quot;Oh, I am *so* glad you asked. So, you are aware how at this point all of our various plates and dishes and cups and whatnot have taken up the habit of wandering around the house of their own accord?&quot;
+
+&quot;Painfully so, yes?&quot;
+
+&quot;And you recall the fact that we have never once, in the nearly a decade of them doing this, have we actually seen them moving?&quot;
+
+&quot;Also yes?&quot;
+
+&quot;Well, *I* thought, that maybe we never saw them moving because they only move when *no one is looking.* Makes sense so far, yes?&quot;
+
+&quot;Yeah, I follow.&quot; Caern&#39;s face has softened up now that we have started our little game of &#39;I take an unnecessarily long time to explain something I&#39;m proud of.&#39;
+
+&quot;So, I tested it out. I stared at my tea mug for several hours, and not once did it move the whole time!&quot;
+
+&quot;That seems, excessive?&quot;
+
+&quot;It was what science required of me!&quot; I state overdramatically. &quot;Anyway, so after doing that particular experiment I was pretty sure my hypothesis was correct.&quot;
+
+&quot;Breaking out the nerd words are we?&quot;
+
+&quot;Shut up, yes, so I decided then to test if it had to be a *person* watching. So I set one of our webcams to be watching the mug, and left it alone for several hours. And, when I came back, *voila!* It was still there!&quot;
+
+A twinkle enters Caern&#39;s eyes. &quot;I think I&#39;m starting to see where this is going...&quot;
+
+&quot;Well, let me finish! I&#39;m having fun!&quot;
+
+&quot;Oh yes, please continue good scientist.&quot; he replies with mock formality.
+
+&quot;Thank you! So then, I tried the same experiment with the camera *off.* And the mug still stayed in place! So it doesn&#39;t *actually* need to be watched, it just needs to *think* it is being watched.&quot;
+
+Caern is nodding along.
+
+&quot;So, finally I tried drawing an eye on a piece of paper and setting it up facing the mug. It worked! This:&quot; I hold up the mug, triumphantly displaying the painted eye on its side, &quot;is the final version. Now the mug watches itself, and it doesn&#39;t move at all anymore!&quot;
+
+Caern starts clapping vigorously, and cheers as if he were an audience.
+
+I take a small bow, still sitting down in my chair. &quot;Thank you, thank you.&quot;
+
+&quot;Ok, honestly, it is actually really amazing that you figured that out! I&#39;m proud of you!&quot;
+
+&quot;Oh please,&quot; I try not to blush.
+
+&quot;But, minor problem.&quot;
+
+&quot;Yeah?&quot;
+
+&quot;That is *definitely* gonna come off in the wash.&quot;
+
+&quot;Well, we can just hand-wash our dishes from now on?&quot;
+
+&quot;I suppose it&#39;s better than finding them in our bedsheets.&quot;](else:)[(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I look away from my computer and reach for my]] mug of tea. (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I smile smugly when I see it sitting there,]] exactly where I left it.
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Caern peeks through the doorway. &quot;Hey, have you ordered the seed for the next pro- ... Did you paint an eye on your mug?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Yes!&quot; I answer cheerfully.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Why?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Oh, I am *so* glad you asked. So, you are aware how at this point all of our various]] plates (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[and dishes and cups and whatnot have taken up the]] habit of wandering around the house (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[of their own accord?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Painfully so, yes?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;And you recall the fact that we have]] never (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[once, in the nearly a decade of them doing this, have we actually]] seen them moving(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Also yes?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Well, *I* thought, that maybe we never saw them moving because they only move when *no one is looking.* Makes sense so far, yes?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Yeah, I follow.&quot; Caern&#39;s face has softened up now that we have started our little game of &#39;I take an unnecessarily long time to explain something I&#39;m proud of.&#39;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;So, I tested it out. I stared at my tea mug for several hours, and not once did it move the whole time!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;That seems, excessive?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;It was what science required of me!&quot; I state overdramatically. &quot;Anyway, so after doing that particular experiment I was pretty sure my hypothesis was correct.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Breaking out the nerd words are we?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Shut up, yes, so I decided then to test if it had to be a *person* watching. So I set one of our webcams to be watching the mug, and left it alone for several hours. And, when I came back, *voila!* It was still there!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[A twinkle enters Caern&#39;s eyes. &quot;I think I&#39;m starting to see where this is going...&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Well, let me finish! I&#39;m having fun!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Oh yes, please continue good scientist.&quot; he replies with mock formality.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Thank you! So then, I tried the same experiment with the camera *off.* And the mug still stayed in place! So it doesn&#39;t *actually* need to be watched, it just needs to *think* it is being watched.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Caern is nodding along.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;So, finally I tried drawing an eye on a piece of paper and setting it up facing the mug. It worked! This:&quot; I hold up the mug, triumphantly displaying the]] painted eye (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[on its side, &quot;is the final version. Now the mug watches itself, and it doesn&#39;t move at all anymore!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Caern starts clapping vigorously, and cheers as if he were an audience.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I take a small bow, still sitting down in my chair. &quot;Thank you, thank you.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Ok, honestly, it is actually really amazing that you figured that out! I&#39;m proud of you!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Oh please,&quot; I try not to blush.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;But, minor problem.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Yeah?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;That is *definitely* gonna come off in the wash.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Well, we can just hand-wash our dishes from now on?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;I suppose it&#39;s better than finding them in our bedsheets.&quot;]]
+
+*It looks like you don&#39;t have a strong enough connection to this item to get a proper look at its connections. You&#39;ll have to see if a specific location or object can strenghten your connection with it.*]
 
 [[Back-&gt;Mug with an Eye Painted On]](set: $cornerthing to &#39;alanoffice&#39;)</tw-passagedata><tw-passagedata pid="44" name="Get Mug" tags="intro" position="15,782" size="100,100">You picked up the *Mug with an Eye Painted On*.
 
@@ -933,17 +1242,81 @@ I climb back down the ladder.](else:)[(text-style: &quot;blurrier&quot;)[(text-s
 [[Back-&gt;Workbench]]
 
 (set: $hasmug to true)
-(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="45" name="Get Rusted Key" tags="" position="20,320" size="100,100">You picked up the *Rusted Key*.
+(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="45" name="Get Rusted Key" tags="intro" position="20,320" size="100,100">You picked up the *Rusted Key*.
 
 [[View in Inventory-&gt;Rusted Key]]
 [[Back-&gt;Dining Room]]
 
 (set: $haskey to true)
-(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="46" name="Filthy Trowel" tags="intro" position="801,782" size="100,100">A garden trowel completely covered in some sort of filth. It’s impossible to tell whether it’s dirt, rust, or both.
+(unless: (history:) contains &quot;Get Rusted Key&quot;)[(set: $itemcount to $itemcount + 1)]</tw-passagedata><tw-passagedata pid="46" name="Filthy Trowel" tags="intro" position="801,782" size="100,100">A garden trowel completely covered in some sort of filth. It’s impossible to tell whether it’s dirt, rust, or both.
 
 You can feel the connections to the trowel humming...[[scry on it?-&gt;Scry on Trowel]]
 
-[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="47" name="Scry on Trowel" tags="scrying" position="907,784" size="100,100">
+[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="47" name="Scry on Trowel" tags="scrying" position="906,784" size="100,100">I check to make sure my trowel is fastened to my belt, and start hefting some bags of dirt into the bed of the pickup truck. The first couple make a loud banging noise, but the next few are cushioned by the bags beneath them.
+
+Alan pokes his head in from the hallway. &quot;Uh. What are you doing?&quot;
+
+I turn towards him and flash him an enormous grin. &quot;Ah, Alan! Just the man I wanted to see!&quot;
+
+He flushes a little at that. It almost feels like cheating, how easy it is.
+
+Almost.
+
+&quot;So,&quot; I continue, &quot;you know how gravity has been getting a little...experimental...in some parts of the neighborhood and it&#39;s making everyone on the street uncomfortable and generally contributing to a growing sense of dread?&quot;
+
+&quot;Uh. Yes?&quot;
+
+&quot;Well, *I* thought now would be an excellent time to try and raise morale with a neighborhood beautification initiative! Weird sort-of-apocalypse edition!&quot;
+
+Alan smiles at this, and puts his face in one of his hands. &quot;Yeah, okay. Yup. Sounds about right.&quot;
+
+&quot;Look, I have an idea that will make people stop *dreading* this whole business and start looking at it as just another way of life! I think. I dunno, really I&#39;m just doing it for me and hoping it helps.&quot;
+
+&quot;Ok, what&#39;s your grand plan?&quot;
+
+&quot;Well, some of the weird gravity stuff has made it so that you can walk on the walls of some people&#39;s houses like it&#39;s the floor.&quot;
+
+&quot;This is true, yes.&quot;
+
+&quot;And like, I&#39;m talking outside walls.&quot;
+
+&quot;Ok, that makes a little more sense vis-a-vis neighborhood beautification initiative. Go on?&quot;
+
+&quot;So,&quot; I can&#39;t help but start grinning again, &quot;I thought, if these walls can be used as floors, that&#39;s a lot of external floorspace that didn&#39;t used to exist.&quot;
+
+Alan looks at the bags of dirt, and I can see realization starting to spark in his eyes. &quot;Wait, you&#39;re planning on-&quot;
+
+&quot;That&#39;s a lot of new real estate to start flower gardens on!&quot;
+
+Alan let&#39;s out a bit of a laugh, and then quiets down for a bit and thinks about it. &quot;So, you&#39;re telling me, that you saw people getting vacuumed up their house walls and getting stuck up there, and you went, &#39;oh I bet that could use some flowers&#39;?&quot;
+
+&quot;Yeah!&quot;
+
+&quot;...&quot;
+
+&quot;What?&quot;
+
+&quot;I think I love you, and I think you&#39;re a genius.&quot;
+
+&quot;What??&quot; That is not quite what I was expecting.
+
+Alan looks simultaneously very serious and like he&#39;s about to break into laughter. Intense. &quot;No really, that&#39;s actually...an excellent idea? It&#39;ll definitely take a lot of work, like, we can&#39;t just start with dirt. We have to make, like, planter boxes first.&quot;
+
+&quot;Oh yeah, whoops.&quot;
+
+&quot;Yeah, but honestly? I feel like planting flowers on the weird gravity walls would make them a lot less menacing! Harder to take them seriously, you know?&quot;
+
+&quot;Exactly! That&#39;s exactly what I was thinking!&quot;
+
+&quot;Yeah! Now, get that dirt out of the truck. We need to talk with our neighbors first, and then we need to acquire some construction materials.&quot;
+
+&quot;Hell yeah! Post-apocypse gardening project!&quot;
+
+&quot;Wait, do you think it&#39;s going to be dangerous?&quot;
+
+&quot;I have no idea! Let&#39;s do it anyway!&quot;
+
+&quot;...yeah, ok. Not like I&#39;m doing anything else important.&quot;
 
 [[Back-&gt;Filthy Trowel]](set: $cornerthing to &#39;fronthallway&#39;)</tw-passagedata><tw-passagedata pid="48" name="Get Filthy Trowel" tags="intro" position="17,917" size="100,100">You picked up the *Filthy Trowel*.
 
@@ -955,9 +1328,45 @@ You can feel the connections to the trowel humming...[[scry on it?-&gt;Scry on T
 
 You can feel the connections to the toothbrushes humming...[[scry on them?-&gt;Scry on Toothbrushes]]
 
-[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="50" name="Scry on Toothbrushes" tags="scrying" position="906,887" size="100,100">
+[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="50" name="Scry on Toothbrushes" tags="scrying" position="906,887" size="100,100">I hear a commotion coming from down the hall. Our guests must be waking up.
 
-[[Back-&gt;7 Disposable Toothbrushes]]</tw-passagedata><tw-passagedata pid="51" name="Get Toothbrushes" tags="intro" position="20,676" size="100,100">You picked up the *7 Disposable Toothbrushes*.
+I leave my office, and walk towards the noise. The five of them are all crowded in and around the bathroom, all in various stages of their morning rituals. A couple are still in pajamas (which we provided), while the others are all at least half-dressed. Two are brushing their teeth, one is brushing their hair, another is using the blow-dryer, and one is desperately squirming towards the mirror while they try to put makeup on.
+
+It&#39;s a very lively scene, to say the least. They look like they&#39;re having fun.
+
+&quot;Good morning. How are you all doing?&quot; I ask them.
+
+&quot;Oh! Mr....uh...Alan?..sir! It&#39;s good! It&#39;s great! Thank you so much for helping us out!&quot; the nearest one manages.
+
+&quot;Please, just call me Alan. And you&#39;re welcome, it&#39;s the least we could do.&quot;
+
+&quot;I mean, the least you could do would have been to shut your door in our faces, technically. So, thanks for not doing that.&quot; replies the one applying makeup.
+
+&quot;Oh, please. We&#39;re relatively safe here, and we have plenty of supplies. We had to help you. But, if I may ask, why are you all crowded in there at once?&quot;
+
+&quot;Well,&quot; answers the one who just finished using the blowdryer and is now putting toothpaste on a toothbrush of their own, &quot;we wanted to be out of your hair as quickly as possible. Once we&#39;re done in here, we can hit the road.&quot;
+
+&quot;Absolutely not!&quot; I respond with as much authority as I can manage. &quot;When you arrived last night, it looked like you hadn&#39;t slept or eaten in days. You need more than a single night&#39;s rest to recover from that, and if you *don&#39;t* recover before heading back out there you are going to put yourselves in *much more risk* than you need to.&quot;
+
+They look at each other as if considering it, then back to me.
+
+&quot;Look, I realize that if you are really in a hurry or really want to leave, we can&#39;t—and won&#39;t—keep you here.&quot; I elaborate, &quot;But! We would really rather prefer that you actually recovered your strength before getting back out there. It&#39;s incredibly dangerous, as I&#39;m sure you are aware.&quot;
+
+They all get a dark look on their faces when I say that. I suppose they didn&#39;t make it here unscathed, then.
+
+&quot;We have supplies and space for you. Stay here for as long as you need, and not a second shorter than that. Does that sound good to you?&quot;
+
+&quot;One second.&quot; They move to talk with each other, and I move away to give them some privacy. After a short bit, they motion me back over.
+
+&quot;If you&#39;ll have us, it would be great if we could stay here for about a week, and then we&#39;ll be gone. Is that okay?&quot; The one wearing makeup asks tentatively.
+
+&quot;Yes, it&#39;s settled then! Now, chose *one* of you to be using that bathroom and take turns, for goodness sake. If there were any more of you, you wouldn&#39;t even fit in that room!&quot;
+
+&quot;Heh, yeah.&quot; says makeup, in a tone of voice that tells me perhaps I said something I shouldn&#39;t have.
+
+Didn&#39;t make it here unscathed, indeed. I hope that, wherever they&#39;re going, they won&#39;t have to run anymore.
+
+[[Back-&gt;7 Disposable Toothbrushes]](set: $cornerthing to &#39;backhallway&#39;)</tw-passagedata><tw-passagedata pid="51" name="Get Toothbrushes" tags="intro" position="20,676" size="100,100">You picked up the *7 Disposable Toothbrushes*.
 
 [[View in Inventory-&gt;7 Disposable Toothbrushes]]
 [[Back-&gt;Bathroom]]
@@ -994,8 +1403,9 @@ You can feel the connections to the toothbrushes humming...[[scry on them?-&gt;S
 (link-reveal: &quot;And, you guess, it will probably stay that way long after you are gone from it.&quot;)[
 
 [[The End]]]]]]]]</tw-passagedata><tw-passagedata pid="56" name="The End" tags="intro" position="643,1351" size="100,100">&lt;h1&gt;THE END&lt;/h1&gt;
-&lt;h2&gt;You found $itemcount out of 8 items.&lt;/h2&gt;
-&lt;h2&gt;Thank you for playing!&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="57" name="Give the thing the Rusted Key." tags="scrying" position="265,153" size="100,100">You reach for the key, but you can&#39;t find it.
+&lt;h2&gt;You found $itemcount out of 10 collectable items. 
+You found $objectcount out of 4 stationary objects.&lt;/h2&gt;
+&lt;h2&gt;Thank you for playing!&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="57" name="Give the thing the Rusted Key." tags="scrying" position="266,164" size="100,100">You reach for the key, but you can&#39;t find it.
 
 You look for the thing, and it is gone.
 
@@ -1003,7 +1413,173 @@ You look for the thing, and it is gone.
 
 (set: $haskey to false)
 (set: $atticopen to true)
-(set: $cornerthing to &#39;attic&#39;)</tw-passagedata></tw-storydata>
+(set: $cornerthing to &#39;attic&#39;)</tw-passagedata><tw-passagedata pid="58" name="Crescent Moon Necklace" tags="intro" position="800,992" size="100,100">A reflective white crescent moon pendant on a short black cord. Despite being covered in dust, its color has not faded or yellowed at all.
+
+You can feel the connections to the necklace humming...[[scry on it?-&gt;Scry on Crescent Moon Necklace]]
+
+[[Back to inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="59" name="Scry on Crescent Moon Necklace" tags="scrying" position="908,990" size="100,100">I&#39;m sitting on the back porch, looking out at the garden. It&#39;s a sunny afternoon.
+
+The leader of the group of teens pokes their head out of the back door, and they see me. &quot;Hey, can I talk to you for a minute?&quot;
+
+&quot;Yeah, sure thing! What is it?&quot;
+
+They step out of the door and stand awkwardly, as if unsure what to do with themselves. I pat the bench next to me.
+
+&quot;Well, come on and sit down!&quot;
+
+They oblige, tentatively. &quot;So, we&#39;re gonna be leaving soon. Tomorrow or the next day, probably. But I wanted you to have this.&quot;
+
+They hand me what looks like a necklace. It&#39;s a white crescent moon on a short black cord. I&#39;ve never seen any of them wearing it.
+
+&quot;Why? What is this?&quot;
+
+&quot;It belonged to a friend of ours. I think it belongs here now.&quot;
+
+&quot;Ok, so, a couple of questions. One, why is this no longer in your friend&#39;s possession and two, why are you giving it to me?&quot;
+
+There is a pained expression on the teen&#39;s face. This must be hard for them, I should probably tone it down a little...
+
+&quot;She, uh, didn&#39;t make it here with us. We lost her to one of those cascade things a while back, and her necklace showed up in my bag a couple days later.&quot;
+
+&quot;Ah, I see.&quot; That&#39;s what I was afraid of. &quot;I&#39;m so, so sorry that you&#39;ve all had to go through this. Don&#39;t you want to hang onto it, though? As a memento? Why give something so precious to someone you essentially just met?&quot;
+
+&quot;Well, the thing is. You know that thing that hangs out in the corner sometimes?&quot;
+
+&quot;Yeah, the one you guys think is a ghost?&quot;
+
+&quot;Well, it always shows up whenever we talk about her. It comes closer when we play her favorite songs or talk about home. Once, I think I even heard it laughing! I think she isn&#39;t really gone.&quot;
+
+&quot;Huh. That is, uh. I don&#39;t really know what to say to that? Why give this to me, and not to her?&quot;
+
+&quot;I&#39;ve tried giving it to her, she doesn&#39;t seem to want it. We&#39;ve given her some stuff before, *before* we figured out who she was, and most of it just seems to...go away. Like, poof, gone. So I think she might be afraid?&quot;
+
+&quot;Ok, but why me? Why not keep it for her?&quot;
+
+&quot;I mean, she can&#39;t leave the house.&quot;
+
+&quot;Wait, what?&quot; I ask. This is news to me.
+
+&quot;Yeah, I only ever see her in the house. I&#39;ve tried to like, summon her outside but the best I&#39;ve ever gotten is seeing her through the window. And, like, it kinda makes sense? Your house is, and I mean this in like a good and cool way and not a mean way, MEGA-weird. It has the highest concentration of completely harmless supernatural shit I have ever seen, and I&#39;ve seen my fair share of supernatural shit! So I think, maybe she&#39;s bound to it?&quot;
+
+&quot;I see.&quot; I take a moment to process what they just told me. &quot;And so, since you figured she&#39;s gonna be stuck with us we might as well have her necklace.&quot;
+
+&quot;Yeah, I want it to be near her. I think she does too.&quot;
+
+&quot;Ok, ok. I&#39;ll take it.&quot; And I do. &quot;I&#39;ll put it somewhere she can look at it.&quot;
+
+&quot;Thank you so much. For this, and everything else you&#39;ve done for us. I really, really can&#39;t thank you enough.&quot;
+
+They look like they&#39;re out of words, so I make the next move.
+
+&quot;Well,&quot; I say, standing up, &quot;I&#39;m gonna go see if we have a box or something to display this in. Thank you, for trusting us with it. I promise we&#39;ll take good care of her.&quot;
+
+&quot;Thank you.&quot; They get up, and move to go back inside.
+
+&quot;Oh, wait!&quot; I stop them before they close the door. &quot;What was her name?&quot;
+
+Their face scrunches up with anger and sadness. They look like they&#39;re going to cry.
+
+&quot;That&#39;s the problem.&quot; they choke out, &quot;I can&#39;t remember. None of us can.&quot;
+
+[[Back-&gt;Crescent Moon Necklace]]</tw-passagedata><tw-passagedata pid="60" name="Get Crescent Necklace" tags="intro" position="19,440" size="100,100">You picked up the *Crescent Moon Necklace*.
+
+[[View in Inventory-&gt;Crescent Moon Necklace]]
+[[Back-&gt;Attic]]
+
+(set: $hascrescent to true)
+(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="61" name="Cloudy Mirror" tags="intro" position="1089,266" size="100,100">A long mirror that has become cloudy with dirt and grime, making it almost feel like a window. You can see yourself in it as if through a fog.
+
+You can feel the connections to the mirror humming...[[scry on it?-&gt;Scry on Mirror]]
+
+[[Back-&gt;Master Bath]]
+
+(if: (history:) contains &quot;Cloudy Mirror&quot;)[](else:)[(set: $objectcount to $objectcount + 1)]</tw-passagedata><tw-passagedata pid="62" name="Scry on Mirror" tags="scrying" position="1190,266" size="100,100">I am shaving in front of the bathroom mirror. Caern is taking a shower; the steam is fogging up the room a little, but not enough for me to mind.
+
+I finish shaving, and wash my face. Caern steps out of the shower, dries himself off, and wraps the towel around his waste. He moves up to the sink next to me, and looks at me in the mirror.
+
+&quot;You know, we *should* talk about it at some point. Like, explicitly.&quot; he says.
+
+&quot;About what, specifically?&quot; I ask. I think I know the answer, but I&#39;m not sure.
+
+&quot;You know. Everything. The laws of physics just up and changing, everyone in the world crying &#39;apocalypse&#39;. Everything.&quot;
+
+&quot;Yeah, we uh. Haven&#39;t really had a conversation about it, have we?&quot; I only realize what I&#39;m saying is true after I&#39;ve said it. I chuckle a little. &quot;Two years we&#39;ve known about it, and we&#39;ve lived with it for twice as long. And not once have we sat down and talked about it.&quot;
+
+&quot;We could talk about it now?&quot;
+
+&quot;I suppose we already are, aren&#39;t we?&quot;
+
+&quot;Yeah.&quot;
+
+He puts some toothpaste on his toothbrush, and looks at me directly—not through the mirror.
+
+&quot;Well,&quot; I start, &quot;I suppose I should start with an apology. In the beginning this stuff all hit me pretty hard, but a took it out on you a little and that was, frankly, unacceptable. I&#39;m sorry.&quot;
+
+&quot;*You*,&quot; says Caern, &quot;have already apologized for that. Several times! And I forgave you, so, maybe you should start actually forgiving yourself for it.&quot;
+
+I grumble. It doesn&#39;t feel like I should be doing that, but I know he won&#39;t hear it.
+
+He sighs, and puts down the toothbrush. Caern takes my hand, and gently pulls me into a hug. &quot;Darling, this has been hard on both of us. In different ways. And neither of us have spent all that much time processing it, so let&#39;s process it! You start. How does knowing, for a fact, that the supernatural exists make you feel?&quot;
+
+I let him pull me in, and sigh a little. &quot;It shook the foundations of my worldview, you know? Like, I had spent so long refusing the idea of any higher powers that, when they just...showed up...I was terrified! I *am* terrified. I spent a long time getting some of the things my parents taught me out of my head, and they just. All came roaring back. And I hated it. Hate it.&quot;
+
+&quot;See, isn&#39;t that better?&quot;
+
+Hrrrmff. He is frustratingly good at this, it&#39;s not fair. &quot;Yeah, yeah I guess it is. What about you?&quot; I ask, wrapping my arms around him, &quot;You just sort of buried your head in work, why?&quot;
+
+&quot;Well, we&#39;re still talking about yo-&quot;
+
+&quot;Ah ah ah, no dodging the question. How did it make *you* feel?&quot;
+
+&quot;Hm.&quot; he starts, &quot;I really genuinely didn&#39;t know what to make of it at first. It was a total shock, for it to just be out in the open like that. Like, I always felt there was *probably* something more going on in the world, but I never expected anything like this. So I just decided to wait and see what would end up happening, but everyone&#39;s apocalypse talk got to me a little and waiting started to become really *really* stressful, so I started throwing myself into my work to reduce that a bit.&quot;
+
+&quot;That makes sense. All things considered, you definitely handled it better than I did.&quot;
+
+&quot;You can say that again.&quot;
+
+&quot;*Hey!* I thought we were being mutually supportive!&quot;
+
+&quot;There is room for both love and truth in this discussion, my love.&quot; He says, trying not to crack a smile.
+
+&quot;Well, what do you think now?&quot; I ask.
+
+&quot;Hm?&quot;
+
+&quot;Well, you said you wanted to wait and see. And we have waited and seen, so what do you think now?&quot;
+
+&quot;Oh, I suppose we have. Hm.&quot;
+
+He thinks for a moment.
+
+&quot;I think,&quot; he says, with an uncharacteristic amount of consideration, &quot;that I don&#39;t exactly like where it&#39;s going. It feels like the world we knew is falling apart—like an old piece of fabric—and something else is taking its place.&quot;
+
+&quot;I get that feeling too...It sounds a lot less dreadful when you say it out loud, doesn&#39;t it?&quot; I observe, surprising myself.
+
+&quot;Yeah, I suppose so. Maybe something new won&#39;t be so bad for the world.&quot;
+
+&quot;We can only hope.&quot; I squeeze Caern a little tighter.
+
+[[Back-&gt;Cloudy Mirror]]</tw-passagedata><tw-passagedata pid="63" name="Broken-Down Pickup Truck" tags="intro" position="1091,369" size="100,100">A pickup truck that is rusting at the edges. Its tires are flat and its windows are clouded with dust: it looks like it has decided to never move from the spot it sits ever again.
+
+You can feel the connections to the truck humming...[[scry on it?-&gt;Scry on Truck]]
+
+[[Back-&gt;Garage]]
+
+(if: (history:) contains &quot;Broken-Down Pickup Truck&quot;)[](else:)[(set: $objectcount to $objectcount + 1)]</tw-passagedata><tw-passagedata pid="64" name="Scry on Truck" tags="scrying" position="1192,370" size="100,100">
+
+[[Back-&gt;Broken-Down Pickup Truck]]</tw-passagedata><tw-passagedata pid="65" name="Cracked Alarm Clock" tags="intro" position="804,1099" size="100,100">A digital alarm clock with a huge crack down the middle of its display. It wasn’t plugged into the wall.
+
+You can feel the connections to the clock humming...[[scry on it?-&gt;Scry on Alarm Clock]]
+
+[[Back to inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="66" name="Scry on Alarm Clock" tags="scrying" position="914,1098" size="100,100">
+
+[[Back-&gt;Cracked Alarm Clock]]</tw-passagedata><tw-passagedata pid="67" name="Get Alarm Clock" tags="intro" position="17,1181" size="100,100">You picked up the *Cracked Alarm Clock*.
+
+[[View in Inventory-&gt;Cracked Alarm Clock]]
+[[Back-&gt;Bedroom]]
+
+(set: $hasclock to true)
+(set: $itemcount to $itemcount + 1)</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
