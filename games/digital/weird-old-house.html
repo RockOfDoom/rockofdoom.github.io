@@ -194,11 +194,11 @@ There are two doors in this room that open right into each other, one going into
 
 (set: $currentroom to &#39;kitchen&#39;)</tw-passagedata><tw-passagedata pid="6" name="Dining Room" tags="" position="516,584" size="100,100">(if: (history:) contains &quot;Dining Room&quot;)[You enter the dining room, and take a look around.
 
-In the center of a room is a long dining table, with space for about six people to sit. It looks like it&#39;s the extendable kind, though, and might fit even more in its full length.
+In the center of the room is a long dining table, with space for about six people to sit. It looks like it&#39;s the extendable kind, though, and might fit even more in its full length.
 
 There are yellowing, dead potted plants all around the edges of the room, and there are a couple on the table too. (if: $haskey is false)[Now that you are looking over the room again, you actually [[notice something glinting in one of the pots.-&gt;Get Rusted Key]]]
 
-There is a window that looks out on the front lawn. It frames the door that brought you to this strange place in way that almost feels intentional.
+There is a window that looks out on the front lawn. It frames the door that brought you to this strange place in a way that almost feels intentional.
 
 There is a door that leads back into the front hallway, and another door that leads into what looks to be the kitchen.(if: $cornerthing is &#39;diningroom&#39;)[
 
@@ -209,11 +209,11 @@ There is a door that leads back into the front hallway, and another door that le
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You enter the dining room, and (link-reveal: &quot;take a look around.&quot;)[
 
-In the center of a room is a long dining table, with space for about six people to sit. It looks like it&#39;s the extendable kind, though, and might fit (link-reveal: &quot;even more in its full length.&quot;)[
+In the center of the room is a long dining table, with space for about six people to sit. It looks like it&#39;s the extendable kind, though, and might fit (link-reveal: &quot;even more in its full length.&quot;)[
 
 There are yellowing, dead potted plants all around the edges of the room, and there are (link-reveal: &quot;a couple on the table too.&quot;)[
 
-There is a window that looks out on the front lawn. It frames the door that brought you to this strange place in way that (link-reveal: &quot;almost feels intentional.&quot;)[
+There is a window that looks out on the front lawn. It frames the door that brought you to this strange place in a way that (link-reveal: &quot;almost feels intentional.&quot;)[
 
 There is a door that leads back into the front hallway, and another door that leads into what (link-reveal: &quot;looks to be the kitchen.&quot;)[(if: $cornerthing is &#39;diningroom&#39;)[
 
@@ -224,9 +224,9 @@ There is a door that leads back into the front hallway, and another door that le
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]
 
-(set: $currentroom to &#39;diningroom&#39;)</tw-passagedata><tw-passagedata pid="7" name="Front Hallway" tags="" position="399,585" size="100,100">(if: (history:) contains &quot;Front Hallway&quot;)[You are now standing in a small, quiet hallway. 
+(set: $currentroom to &#39;diningroom&#39;)</tw-passagedata><tw-passagedata pid="7" name="Front Hallway" tags="" position="398,586" size="100,100">(if: (history:) contains &quot;Front Hallway&quot;)[You are now standing in a small, quiet hallway. 
 
-There are slight scuffmarks along the bottom edges of the walls, and the various shoes and decor are all in dissaray.
+There are slight scuffmarks along the bottom edges of the walls, and the various shoes and decor are all in disarray.
 
 You see a door in the front wall of the house that you assume leads to the garage.
 
@@ -246,7 +246,7 @@ The hallway continues farther into the house.(if: $cornerthing is &#39;fronthall
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You are now standing in a small, quiet (link-reveal: &quot;hallway.&quot;)[
 
-There are slight scuffmarks along the bottom edges of the walls, and the various shoes and decor are all (link-reveal: &quot;in dissaray.&quot;)[
+There are slight scuffmarks along the bottom edges of the walls, and the various shoes and decor are all (link-reveal: &quot;in disarray.&quot;)[
 
 You see a door in the front wall of the house that you assume (link-reveal: &quot;leads to the garage.&quot;)[
 
@@ -266,7 +266,7 @@ The hallway continues farther into (link-reveal: &quot;the house.&quot;)[(if: $c
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]]
 
-(set: $currentroom to &#39;fronthallway&#39;)</tw-passagedata><tw-passagedata pid="8" name="Alan&#39;s Office" tags="" position="324,859" size="100,100">(if: (history:) contains &quot;Alan&#39;s Office&quot;)[You enter what looks to be someone&#39;s office or workspace.
+(set: $currentroom to &#39;fronthallway&#39;)</tw-passagedata><tw-passagedata pid="8" name="Alan&#39;s Office" tags="" position="324,859" size="100,100">(if: (history:) contains &quot;Alan&#39;s Office&quot;)[You enter what looks to be someone&#39;s office.
 
 It&#39;s a small-ish room, there is a window across from you that opens out into the emptiness outside and a respectably-sized desk pushed against the wall to your right.
 
@@ -280,11 +280,11 @@ The only entrance to the room is the door you came through.(if: $cornerthing is 
 
 [[Back into hallway.-&gt;Back Hallway]]
 
-(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You enter what looks to be someone&#39;s (link-reveal: &quot;office or workspace.&quot;)[
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You enter what looks to be (link-reveal: &quot;someone&#39;s office&quot;)[
 
 It&#39;s a small-ish room, there is a window across from you that opens out into the emptiness outside and a respectably-sized desk pushed (link-reveal: &quot;against the wall to your right.&quot;)[
 
-On the desk is a desktop computer hooked up to two monitors. (if: $hasradio is false)[There is also [[an old dissassembled radio-&gt;Get Broken Radio]] glinting at you on the desk, tucked neatly and carefully underneath one of the monitors. ]The desk looks neatly organized, even though it&#39;s covered in dust.There is a circular stain on the table (link-reveal: &quot;where a mug might have once sat.&quot;)[
+On the desk is a desktop computer hooked up to two monitors. (if: $hasradio is false)[There is also [[an old dissassembled radio-&gt;Get Broken Radio]] glinting at you on the desk, tucked neatly and carefully underneath one of the monitors. ]The desk looks neatly organized, even though it&#39;s covered in dust. There is a circular stain on the table (link-reveal: &quot;where a mug might have once sat.&quot;)[
 
 There is a spinning office chair in front of the desk. This room (link-reveal: &quot;doesn&#39;t seem to have much other furnishing.&quot;)[
 
@@ -462,7 +462,7 @@ The only entrance is (link-reveal: &quot;the one you came through.&quot;)[(if: $
 
 Except for the grime it has accumulated, it is unremarkable. The floor is tile, there is a sink, a toilet, a combination bathtub/shower, and a mirror.
 
-There is a dead potted plant sitting on the toilet. (if: $hastoothbrush is false)[On the sink, standing up in the holster, are [[several toothbrushes-&gt;Get Toothbrushes]] that are catching your eye. ]The sink could use some cleaning, the mirror needs to be dusted, and the room generally feels abandoned.(if: $cornerthing is &#39;bathroom&#39;)[
+There is a dead potted plant sitting on the toilet. (if: $hastoothbrush is false)[On the sink, standing up in a plastic cup, are [[several toothbrushes-&gt;Get Toothbrushes]] that are catching your eye. ]The sink could use some cleaning, the mirror needs to be dusted, and the room generally feels abandoned.(if: $cornerthing is &#39;bathroom&#39;)[
 
 [[There is something in the corner.]]]
 
@@ -472,7 +472,7 @@ There is a dead potted plant sitting on the toilet. (if: $hastoothbrush is false
 
 Except for the grime it has accumulated, it is unremarkable. The floor is tile, there is a sink, a toilet, a combination bathtub/shower, (link-reveal: &quot;and a mirror.&quot;)[
 
-There is a dead potted plant sitting on the toilet. (if: $hastoothbrush is false)[On the sink, standing up in the holster, are [[several toothbrushes-&gt;Get Toothbrushes]] that are catching your eye. ]The sink could use some cleaning, the mirror needs to be dusted, and (link-reveal: &quot;the room generally feels abandoned.&quot;)[(if: $cornerthing is &#39;bathroom&#39;)[
+There is a dead potted plant sitting on the toilet. (if: $hastoothbrush is false)[On the sink, standing up in a plastic cup, are [[several toothbrushes-&gt;Get Toothbrushes]] that are catching your eye. ]The sink could use some cleaning, the mirror needs to be dusted, and (link-reveal: &quot;the room generally feels abandoned.&quot;)[(if: $cornerthing is &#39;bathroom&#39;)[
 
 [[There is something in the corner.]]]
 
@@ -486,7 +486,7 @@ It overlooks the backyard, which stretches a bit away from the house before abru
 
 There is what used to be an extensive garden in the backyard—although what it contained is anyone&#39;s guess, considering the current state of the plants.
 
-There is a back shed towards the edge of the backyard, small and wooden. Probably for storing gardening tools.
+There is a shed towards the edge of the backyard, small and wooden. Probably for storing gardening tools.
 
 On the porch near you, there is what appears to be a workbench. It has various rusting tools laid neatly out on it.
 
@@ -500,7 +500,7 @@ It overlooks the backyard, which stretches a bit away from the house before abru
 
 There is what used to be an extensive garden in the backyard—although what it contained is anyone&#39;s guess, considering (link-reveal: &quot;the current state of the plants.&quot;)[
 
-There is a back shed towards the edge of the backyard, small and wooden. (link-reveal: &quot;Probably for storing gardening tools.&quot;)[
+There is a shed towards the edge of the backyard, small and wooden. (link-reveal: &quot;Probably for storing gardening tools.&quot;)[
 
 On the porch near you, there is what appears to be a workbench. It has various rusting tools (link-reveal: &quot;laid neatly out on it.&quot;)[
 
@@ -536,7 +536,7 @@ Scattered among the plants is a large amount of junk: old telephones, old televi
 
 There are some bags of soil sitting at one end of the garden, next to a sun hat and some gardening gloves. (if: $hastrowel is false)[Catching your eye, [[an old garden trowel-&gt;Get Filthy Trowel]] is planted in the dirt by the gloves. ] It looks like it hasn&#39;t been moved since the last time this house had someone in it.
 
-The door the the back shed is slightly ajar, it looks like there is something on the floor inside.
+The door to the shed is slightly ajar; it looks like there is something on the floor inside.
 
 [[Enter back shed.-&gt;Back Shed]]
 [[Back to the porch.-&gt;Back Porch]]
@@ -549,7 +549,7 @@ Scattered among the plants is a large amount of junk: old telephones, old televi
 
 There are some bags of soil sitting at one end of the garden, next to a sun hat and some gardening gloves. (if: $hastrowel is false)[Catching your eye, [[an old garden trowel-&gt;Get Filthy Trowel]] is planted in the dirt by the gloves. ] It looks like it hasn&#39;t been moved (link-reveal: &quot;since the last time this house had someone in it.&quot;)[
 
-The door the the back shed is slightly ajar, it looks like (link-reveal: &quot;there is something on the floor inside.&quot;)[
+The door to the shed is slightly ajar; it looks like (link-reveal: &quot;there is something on the floor inside.&quot;)[
 
 [[Enter back shed.-&gt;Back Shed]]
 [[Back to the porch.-&gt;Back Porch]]
@@ -708,7 +708,7 @@ It is looking at you. It is looking at you. It is looking at you.(if: $haskey is
 
 The *Rusted Key* is burning a hole in your pocket. You can feel the desire like it&#39;s a string pulling at a marionette. It wants you to give it the key, will you? [[(yes, yes, yes)-&gt;Give the thing the Rusted Key.]]]
 
-(cond: $currentroom is &#39;frontlawn&#39;, &quot;[[Back-&gt;Front Lawn]]&quot;, $currentroom is &#39;fronthallway&#39;, &quot;[[Back-&gt;Front Hallway]]&quot;, $currentroom is &#39;garage&#39;, &quot;[[Back-&gt;Garage]]&quot;, $currentroom is &#39;bedroom&#39;, &quot;[[Back-&gt;Bedroom]]&quot;, $currentroom is &#39;diningroom&#39;, &quot;[[Back-&gt;Dining Room]]&quot;, $currentroom is &#39;masterbath&#39;, &quot;[[Back-&gt;Master Bath]]&quot;, $currentroom is &#39;caernoffice&#39;, &quot;[[Back-&gt;Caern&#39;s Office]]&quot;, $currentroom is &#39;alanoffice&#39;, &quot;[[Back-&gt;Alan&#39;s Office]]&quot;, $currentroom is &#39;kitchen&#39;, &quot;[[Back-&gt;Kitchen]]&quot;, $currentroom is &#39;bathroom&#39;, &quot;[[Back-&gt;Bathroom]]&quot;, $currentroom is &#39;livingroom&#39;, &quot;[[Back-&gt;Living Room]]&quot;, $currentroom is &#39;backporch&#39;, &quot;[[Back-&gt;Back Porch]]&quot;, $currentroom is &#39;workbench&#39;, &quot;[[Back-&gt;Workbench]]&quot;, $currentroom is &#39;backyard&#39;, &quot;[[Back-&gt;Back Yard]]&quot;, $currentroom is &#39;backshed&#39;, &quot;[[Back-&gt;Back Shed]]&quot;, $currentroom is &#39;attic&#39;, &quot;[[Back-&gt;Attic]]&quot;, &quot;ERROR: Lost Room Location&quot;)</tw-passagedata><tw-passagedata pid="25" name="header" tags="header" position="320,17" size="100,100">{
+(cond: $currentroom is &#39;frontlawn&#39;, &quot;[[Back-&gt;Front Lawn]]&quot;, $currentroom is &#39;fronthallway&#39;, &quot;[[Back-&gt;Front Hallway]]&quot;, $currentroom is &#39;backhallway&#39;, &quot;[[Back-&gt;Back Hallway]]&quot;,$currentroom is &#39;garage&#39;, &quot;[[Back-&gt;Garage]]&quot;, $currentroom is &#39;bedroom&#39;, &quot;[[Back-&gt;Bedroom]]&quot;, $currentroom is &#39;diningroom&#39;, &quot;[[Back-&gt;Dining Room]]&quot;, $currentroom is &#39;masterbath&#39;, &quot;[[Back-&gt;Master Bath]]&quot;, $currentroom is &#39;caernoffice&#39;, &quot;[[Back-&gt;Caern&#39;s Office]]&quot;, $currentroom is &#39;alanoffice&#39;, &quot;[[Back-&gt;Alan&#39;s Office]]&quot;, $currentroom is &#39;kitchen&#39;, &quot;[[Back-&gt;Kitchen]]&quot;, $currentroom is &#39;bathroom&#39;, &quot;[[Back-&gt;Bathroom]]&quot;, $currentroom is &#39;livingroom&#39;, &quot;[[Back-&gt;Living Room]]&quot;, $currentroom is &#39;backporch&#39;, &quot;[[Back-&gt;Back Porch]]&quot;, $currentroom is &#39;workbench&#39;, &quot;[[Back-&gt;Workbench]]&quot;, $currentroom is &#39;backyard&#39;, &quot;[[Back-&gt;Back Yard]]&quot;, $currentroom is &#39;backshed&#39;, &quot;[[Back-&gt;Back Shed]]&quot;, $currentroom is &#39;attic&#39;, &quot;[[Back-&gt;Attic]]&quot;, &quot;ERROR: Lost Room Location&quot;)</tw-passagedata><tw-passagedata pid="25" name="header" tags="header" position="320,17" size="100,100">{
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).removeClass(\)&lt;/script&gt;&quot;)
 (if: (passage:)&#39;s tags&#39;s length &gt; 0)[
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).addClass(&#39;&quot; + (passage:)&#39;s tags.join(&#39; &#39;) + &quot;&#39;\)&lt;/script&gt;&quot;)]
@@ -722,7 +722,7 @@ On the right side of the house, you see two similar doors—one nearer to the fr
 
 After that second door, the hallway turns to the left. From there, it opens up into the living room.
 
-At the end of the hallway is a bathroom, an there is an entrance to the kitchen to the left of it.(if: $cornerthing is &#39;backhallway&#39;)[
+At the end of the hallway is a bathroom, and there is an entrance to the kitchen to the left of it.(if: $cornerthing is &#39;backhallway&#39;)[
 
 [[There is something in the corner.]]]
 
@@ -743,7 +743,7 @@ On the right side of the house, you see two similar doors—one nearer to the fr
 
 After that second door, the hallway turns to the left. From there, it opens up into the (link-reveal: &quot;living room.&quot;)[
 
-At the end of the hallway is a bathroom, an there is an entrance to the kitchen to the (link-reveal: &quot;left of it.&quot;)[(if: $cornerthing is &#39;backhallway&#39;)[
+At the end of the hallway is a bathroom, and there is an entrance to the kitchen to the (link-reveal: &quot;left of it.&quot;)[(if: $cornerthing is &#39;backhallway&#39;)[
 
 [[There is something in the corner.]]]
 
@@ -820,15 +820,13 @@ He groans and puts the radio down, turning to me.
 
 &quot;No, bug,&quot; he replies with what is *probably* mock seriousness, &quot;I&#39;m afraid I don&#39;t have time for a &#39;little bout of te-&#39;&quot;
 
-He is interrupted as I am hit in the back of my head with something, it falls to the ground in front of me.
+He stops short as I am hit in the back of my head with something, it falls to the ground in front of me.
 
 It&#39;s another tennis ball.
 
 &quot;Oh darling!&quot; I call out in exactly the same manner as before, &quot;Would you care to-&quot;
 
-Alan breaks out in laughter before I can finish my sentence.
-
-&quot;Oooohhh, okay. I have to give you that one, that time it was funny. But that time only!&quot;
+Alan breaks out in laughter before I can finish my sentence. &quot;Oooohhh, okay. I have to give you that one, that time it was funny. But that time only!&quot;
 
 &quot;Did you see where it came from?&quot; I ask, &quot;I was facing the other direction at the time, as you may recall-&quot;
 
@@ -1028,7 +1026,7 @@ I climb back down the ladder.](else:)[(text-style: &quot;blurrier&quot;)[(text-s
 
 [[Back-&gt;Rusted Key]](set: $cornerthing to &#39;garage&#39;)</tw-passagedata><tw-passagedata pid="39" name="Scry on TV" tags="scrying" position="1192,58" size="100,100">I am kneeling in the dirt, using a trowel to remove weeds from my garden. It is lush and cramped, so I have to be very careful.
 
-It&#39;s hot out, so I go back up to the back porch and take a sip from the waterbottle I left on the workbench.
+It&#39;s hot out, so I go back up to the back porch and take a sip from the water bottle I left on the workbench.
 
 *The shortest route between two points is a line. The fastest way to turn left is to turn left. The world is a thin gossamer sheet floating above the void. The-*
 
@@ -1090,7 +1088,7 @@ He&#39;s becoming visibly frustrated. &quot;What do you mean you can&#39;t do mu
 
 &quot;I mean, I know that but-&quot;
 
-&quot;But *WHAT?* Caern, I know its in your nature to go with the flow but the fact that you are just sitting here and *ignoring* all of this is just plain *stupid!* I need your help, but here you are sitting in your studio. Fucking. Playing with dirt! Like *nothing&#39;s wrong!*&quot;
+&quot;But *WHAT?* Caern, I know it&#39;s in your nature to go with the flow but the fact that you are just sitting here and *ignoring* all of this is just plain *stupid!* I need your help, but here you are sitting in your studio. Fucking. Playing with dirt! Like *nothing&#39;s wrong!*&quot;
 
 ...
 
@@ -1130,7 +1128,7 @@ Caern peeks through the doorway. &quot;Hey, have you ordered the seed for the ne
 
 &quot;Painfully so, yes?&quot;
 
-&quot;And you recall the fact that we have never once, in the nearly a decade of them doing this, have we actually seen them moving?&quot;
+&quot;And you recall the fact that never once, in the nearly a decade of them doing this, have we actually seen them moving?&quot;
 
 &quot;Also yes?&quot;
 
@@ -1152,7 +1150,7 @@ A twinkle enters Caern&#39;s eyes. &quot;I think I&#39;m starting to see where t
 
 &quot;Well, let me finish! I&#39;m having fun!&quot;
 
-&quot;Oh yes, please continue good scientist.&quot; he replies with mock formality.
+&quot;Oh yes, please continue, good scientist.&quot; he replies with mock formality.
 
 &quot;Thank you! So then, I tried the same experiment with the camera *off.* And the mug still stayed in place! So it doesn&#39;t *actually* need to be watched, it just needs to *think* it is being watched.&quot;
 
@@ -1290,7 +1288,7 @@ Alan looks at the bags of dirt, and I can see realization starting to spark in h
 
 &quot;That&#39;s a lot of new real estate to start flower gardens on!&quot;
 
-Alan let&#39;s out a bit of a laugh, and then quiets down for a bit and thinks about it. &quot;So, you&#39;re telling me, that you saw people getting vacuumed up their house walls and getting stuck up there, and you went, &#39;oh I bet that could use some flowers&#39;?&quot;
+Alan lets out a bit of a laugh, and then quiets down for a bit and thinks about it. &quot;So, you&#39;re telling me, that you saw people getting vacuumed up their house walls and getting stuck up there, and you went, &#39;oh I bet that could use some flowers&#39;?&quot;
 
 &quot;Yeah!&quot;
 
@@ -1312,7 +1310,7 @@ Alan looks simultaneously very serious and like he&#39;s about to break into lau
 
 &quot;Yeah! Now, get that dirt out of the truck. We need to talk with our neighbors first, and then we need to acquire some construction materials.&quot;
 
-&quot;Hell yeah! Post-apocypse gardening project!&quot;
+&quot;Hell yeah! Post-apocalypse gardening project!&quot;
 
 &quot;Wait, do you think it&#39;s going to be dangerous?&quot;
 
@@ -1326,7 +1324,7 @@ Alan looks simultaneously very serious and like he&#39;s about to break into lau
 [[Back-&gt;Back Yard]]
 
 (set: $hastrowel to true)
-(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="49" name="7 Disposable Toothbrushes" tags="intro" position="801,889" size="100,100">Seven plastic toothbrushes made of colorful plastic. Their brush heads are yellowed with what you hope is age.
+(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="49" name="7 Disposable Toothbrushes" tags="intro" position="801,889" size="100,100">Seven toothbrushes made of colorful plastic. Their brush heads are yellowed with what you hope is age.
 
 You can feel the connections to the toothbrushes humming...[[scry on them?-&gt;Scry on Toothbrushes]]
 
@@ -1411,7 +1409,7 @@ You found $objectcount out of 4 stationary objects.&lt;/h2&gt;
 
 You look for the thing, and it is gone.
 
-(cond: $currentroom is &#39;frontlawn&#39;, &quot;[[Back-&gt;Front Lawn]]&quot;, $currentroom is &#39;fronthallway&#39;, &quot;[[Back-&gt;Front Hallway]]&quot;, $currentroom is &#39;garage&#39;, &quot;[[Back-&gt;Garage]]&quot;, $currentroom is &#39;bedroom&#39;, &quot;[[Back-&gt;Bedroom]]&quot;, $currentroom is &#39;diningroom&#39;, &quot;[[Back-&gt;Dining Room]]&quot;, $currentroom is &#39;masterbath&#39;, &quot;[[Back-&gt;Master Bath]]&quot;, $currentroom is &#39;caernoffice&#39;, &quot;[[Back-&gt;Caern&#39;s Office]]&quot;, $currentroom is &#39;alanoffice&#39;, &quot;[[Back-&gt;Alan&#39;s Office]]&quot;, $currentroom is &#39;kitchen&#39;, &quot;[[Back-&gt;Kitchen]]&quot;, $currentroom is &#39;bathroom&#39;, &quot;[[Back-&gt;Bathroom]]&quot;, $currentroom is &#39;livingroom&#39;, &quot;[[Back-&gt;Living Room]]&quot;, $currentroom is &#39;backporch&#39;, &quot;[[Back-&gt;Back Porch]]&quot;, $currentroom is &#39;workbench&#39;, &quot;[[Back-&gt;Workbench]]&quot;, $currentroom is &#39;backyard&#39;, &quot;[[Back-&gt;Back Yard]]&quot;, $currentroom is &#39;backshed&#39;, &quot;[[Back-&gt;Back Shed]]&quot;, $currentroom is &#39;attic&#39;, &quot;[[Back-&gt;Attic]]&quot;, &quot;ERROR: Lost Room Location&quot;)
+(cond: $currentroom is &#39;frontlawn&#39;, &quot;[[Back-&gt;Front Lawn]]&quot;, $currentroom is &#39;fronthallway&#39;, &quot;[[Back-&gt;Front Hallway]]&quot;, $currentroom is &#39;backhallway&#39;, &quot;[[Back-&gt;Back Hallway]]&quot;,$currentroom is &#39;garage&#39;, &quot;[[Back-&gt;Garage]]&quot;, $currentroom is &#39;bedroom&#39;, &quot;[[Back-&gt;Bedroom]]&quot;, $currentroom is &#39;diningroom&#39;, &quot;[[Back-&gt;Dining Room]]&quot;, $currentroom is &#39;masterbath&#39;, &quot;[[Back-&gt;Master Bath]]&quot;, $currentroom is &#39;caernoffice&#39;, &quot;[[Back-&gt;Caern&#39;s Office]]&quot;, $currentroom is &#39;alanoffice&#39;, &quot;[[Back-&gt;Alan&#39;s Office]]&quot;, $currentroom is &#39;kitchen&#39;, &quot;[[Back-&gt;Kitchen]]&quot;, $currentroom is &#39;bathroom&#39;, &quot;[[Back-&gt;Bathroom]]&quot;, $currentroom is &#39;livingroom&#39;, &quot;[[Back-&gt;Living Room]]&quot;, $currentroom is &#39;backporch&#39;, &quot;[[Back-&gt;Back Porch]]&quot;, $currentroom is &#39;workbench&#39;, &quot;[[Back-&gt;Workbench]]&quot;, $currentroom is &#39;backyard&#39;, &quot;[[Back-&gt;Back Yard]]&quot;, $currentroom is &#39;backshed&#39;, &quot;[[Back-&gt;Back Shed]]&quot;, $currentroom is &#39;attic&#39;, &quot;[[Back-&gt;Attic]]&quot;, &quot;ERROR: Lost Room Location&quot;)
 
 (set: $haskey to false)
 (set: $atticopen to true)
@@ -1497,7 +1495,7 @@ You can feel the connections to the mirror humming...[[scry on it?-&gt;Scry on M
 
 (if: (history:) contains &quot;Cloudy Mirror&quot;)[](else:)[(set: $objectcount to $objectcount + 1)]</tw-passagedata><tw-passagedata pid="62" name="Scry on Mirror" tags="scrying" position="1190,266" size="100,100">I am shaving in front of the bathroom mirror. Caern is taking a shower; the steam is fogging up the room a little, but not enough for me to mind.
 
-I finish shaving, and wash my face. Caern steps out of the shower, dries himself off, and wraps the towel around his waste. He moves up to the sink next to me, and looks at me in the mirror.
+I finish shaving, and wash my face. Caern steps out of the shower, dries himself off, and wraps the towel around his waist. He moves up to the sink next to me, and looks at me in the mirror.
 
 &quot;You know, we *should* talk about it at some point. Like, explicitly.&quot; he says.
 
@@ -1515,7 +1513,7 @@ I finish shaving, and wash my face. Caern steps out of the shower, dries himself
 
 He puts some toothpaste on his toothbrush, and looks at me directly—not through the mirror.
 
-&quot;Well,&quot; I start, &quot;I suppose I should start with an apology. In the beginning this stuff all hit me pretty hard, but a took it out on you a little and that was, frankly, unacceptable. I&#39;m sorry.&quot;
+&quot;Well,&quot; I start, &quot;I suppose I should start with an apology. In the beginning this stuff all hit me pretty hard, but I took it out on you a little and that was, frankly, unacceptable. I&#39;m sorry.&quot;
 
 &quot;*You*,&quot; says Caern, &quot;have already apologized for that. Several times! And I forgave you, so, maybe you should start actually forgiving yourself for it.&quot;
 
@@ -1527,7 +1525,7 @@ I let him pull me in, and sigh a little. &quot;It shook the foundations of my wo
 
 &quot;See, isn&#39;t that better?&quot;
 
-Hrrrmff. He is frustratingly good at this, it&#39;s not fair. &quot;Yeah, yeah I guess it is. What about you?&quot; I ask, wrapping my arms around him, &quot;You just sort of buried your head in work, why?&quot;
+I grumble. He is frustratingly good at this, it&#39;s not fair. &quot;Yeah, yeah I guess it is. What about you?&quot; I ask, wrapping my arms around him, &quot;You just sort of buried your head in work, why?&quot;
 
 &quot;Well, we&#39;re still talking about yo-&quot;
 
@@ -1583,7 +1581,7 @@ Caern opens the door and leans through it. He looks at me and says: &quot;Hey, h
 
 &quot;Yes, it&#39;s in here. It seems to think I&#39;m participating, as it has taken my tools. Without my permission!&quot;
 
-He scans the corners of the room until he sees it. &quot;Wel, that was rude! Give those tools back, Alan is working—not playing!&quot;
+He scans the corners of the room until he sees it. &quot;Well, that was rude! Give those tools back, Alan is working—not playing!&quot;
 
 We both get the strong, playful impression that it won&#39;t give the tools back unless we trade it something.
 
