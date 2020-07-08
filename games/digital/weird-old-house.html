@@ -266,11 +266,11 @@ The hallway continues farther into (link-reveal: &quot;the house.&quot;)[(if: $c
 
 (cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)]]]]]]]
 
-(set: $currentroom to &#39;fronthallway&#39;)</tw-passagedata><tw-passagedata pid="8" name="Alan&#39;s Office" tags="" position="324,859" size="100,100">(if: (history:) contains &quot;Alan&#39;s Office&quot;)[You enter what looks to someone&#39;s office or workspace.
+(set: $currentroom to &#39;fronthallway&#39;)</tw-passagedata><tw-passagedata pid="8" name="Alan&#39;s Office" tags="" position="324,859" size="100,100">(if: (history:) contains &quot;Alan&#39;s Office&quot;)[You enter what looks to be someone&#39;s office or workspace.
 
 It&#39;s a small-ish room, there is a window across from you that opens out into the emptiness outside and a respectably-sized desk pushed against the wall to your right.
 
-On the desk is a desktop computer hooked up to two monitors. (if: $hasradio is false)[There is also [[an old dissassembled radio-&gt;Get Broken Radio]] glinting at you on the desk, tucked neatly and carefully underneath one of the monitors. ]The desk looks neatly organized, even though it&#39;s covered in dust.
+On the desk is a desktop computer hooked up to two monitors. (if: $hasradio is false)[There is also [[an old dissassembled radio-&gt;Get Broken Radio]] glinting at you on the desk, tucked neatly and carefully underneath one of the monitors. ]The desk looks neatly organized, even though it&#39;s covered in dust. There is a circular stain on the table where a mug might have once sat.
 
 There is a spinning office chair in front of the desk. This room doesn&#39;t seem to have much other furnishing.
 
@@ -280,11 +280,11 @@ The only entrance to the room is the door you came through.(if: $cornerthing is 
 
 [[Back into hallway.-&gt;Back Hallway]]
 
-(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You enter what looks to someone&#39;s (link-reveal: &quot;office or workspace.&quot;)[
+(cond: $itemcount &gt; 0, &quot;[[Inventory]]&quot;, &quot;~~Inventory~~&quot;)](else:)[You enter what looks to be someone&#39;s (link-reveal: &quot;office or workspace.&quot;)[
 
 It&#39;s a small-ish room, there is a window across from you that opens out into the emptiness outside and a respectably-sized desk pushed (link-reveal: &quot;against the wall to your right.&quot;)[
 
-On the desk is a desktop computer hooked up to two monitors. (if: $hasradio is false)[There is also [[an old dissassembled radio-&gt;Get Broken Radio]] glinting at you on the desk, tucked neatly and carefully underneath one of the monitors. ]The desk looks neatly organized, (link-reveal: &quot;even though it&#39;s covered in dust.&quot;)[
+On the desk is a desktop computer hooked up to two monitors. (if: $hasradio is false)[There is also [[an old dissassembled radio-&gt;Get Broken Radio]] glinting at you on the desk, tucked neatly and carefully underneath one of the monitors. ]The desk looks neatly organized, even though it&#39;s covered in dust.There is a circular stain on the table (link-reveal: &quot;where a mug might have once sat.&quot;)[
 
 There is a spinning office chair in front of the desk. This room (link-reveal: &quot;doesn&#39;t seem to have much other furnishing.&quot;)[
 
@@ -594,6 +594,8 @@ You can see gardening tools and supplies lining the shelves that are attached to
 (set: $hastoothbrush to false)
 (set: $hascrescent to false)
 (set: $hasclock to false)
+
+(set: $seenradio to false)
 }</tw-passagedata><tw-passagedata pid="20" name="Inventory" tags="intro" position="793,54" size="100,100">(if: $hasnecklace is true)[ - [[Stone Necklace]]
 ](if: $hasplate is true)[ - [[Chipped Dinner Plate]]
 ](if: $hastennisball is true)[ - [[A Tennis Ball and a Tennis Ball and a Tennis Ball and a]]
@@ -852,7 +854,7 @@ I add the ones I am holding to the pile.
 [[Back-&gt;Kitchen]]
 
 (set: $hasplate to true)
-(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="37" name="Scry on Radio" tags="scrying" position="903,470" size="100,100">(if: $currentroom is &#39;workbench&#39;)[I&#39;m sitting at a workbench. On the table in front of me is an old radio with its face plate removed and its inner wiring exposed.
+(set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="37" name="Scry on Radio" tags="scrying" position="903,470" size="100,100">(if: $currentroom is &#39;workbench&#39;)[(set: $seenradio to true)I&#39;m sitting at a workbench. On the table in front of me is an old radio with its face plate removed and its inner wiring exposed.
 
 The work bench is on the back patio, and I can see Caern gardening in the backyard nearby.
 
@@ -1114,9 +1116,9 @@ He nods glumly. &quot;I&#39;m sorry.&quot; he repeats.
 (set: $hasradio to true)
 (set: $itemcount to $itemcount + 1)</tw-passagedata><tw-passagedata pid="42" name="Mug with an Eye Painted On" tags="intro" position="800,679" size="100,100">An old mug with a dark, circular stain marking its insides. There is a crude painting of a stylized eye on its side that is chipping and peeling off of the mug.
 
-(cond: $hasplate is true, &quot;You can feel the connections to the mug humming...[[scry on it?-&gt;Scry on Mug]]&quot;, &quot;You can feel the connections tangled up around the mug...[[scry on it?-&gt;Scry on Mug]]&quot;)
+(cond: $currentroom is &#39;alanoffice&#39;, &quot;You can feel the connections to the mug humming...[[scry on it?-&gt;Scry on Mug]]&quot;, &quot;You can feel the connections tangled up around the mug...[[scry on it?-&gt;Scry on Mug]]&quot;)
 
-[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="43" name="Scry on Mug" tags="scrying" position="906,679" size="100,100">(if: $hasplate is true)[I look away from my computer and reach for my mug of tea. I smile smugly when I see it sitting there, exactly where I left it.
+[[Back to Inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="43" name="Scry on Mug" tags="scrying" position="906,679" size="100,100">(if: $currentroom is &#39;alanoffice&#39;)[I look away from my computer and reach for my mug of tea. I smile smugly when I see it sitting there, exactly where I left it.
 
 Caern peeks through the doorway. &quot;Hey, have you ordered the seed for the next pro- ... Did you paint an eye on your mug?&quot;
 
@@ -1318,7 +1320,7 @@ Alan looks simultaneously very serious and like he&#39;s about to break into lau
 
 &quot;...yeah, ok. Not like I&#39;m doing anything else important.&quot;
 
-[[Back-&gt;Filthy Trowel]](set: $cornerthing to &#39;fronthallway&#39;)</tw-passagedata><tw-passagedata pid="48" name="Get Filthy Trowel" tags="intro" position="17,917" size="100,100">You picked up the *Filthy Trowel*.
+[[Back-&gt;Filthy Trowel]](set: $cornerthing to &#39;garage&#39;)</tw-passagedata><tw-passagedata pid="48" name="Get Filthy Trowel" tags="intro" position="17,917" size="100,100">You picked up the *Filthy Trowel*.
 
 [[View in Inventory-&gt;Filthy Trowel]]
 [[Back-&gt;Back Yard]]
@@ -1561,17 +1563,177 @@ He thinks for a moment.
 
 [[Back-&gt;Cloudy Mirror]]</tw-passagedata><tw-passagedata pid="63" name="Broken-Down Pickup Truck" tags="intro" position="1091,369" size="100,100">A pickup truck that is rusting at the edges. Its tires are flat and its windows are clouded with dust: it looks like it has decided to never move from the spot it sits ever again.
 
-You can feel the connections to the truck humming...[[scry on it?-&gt;Scry on Truck]]
+(cond: $currentroom is $cornerthing, &quot;You can feel the connections to the truck humming...[[scry on it?-&gt;Scry on Truck]]&quot;, &quot;You can feel the connections tangled up around the truck...[[scry on it?-&gt;Scry on Truck]]&quot;)
 
 [[Back-&gt;Garage]]
 
-(if: (history:) contains &quot;Broken-Down Pickup Truck&quot;)[](else:)[(set: $objectcount to $objectcount + 1)]</tw-passagedata><tw-passagedata pid="64" name="Scry on Truck" tags="scrying" position="1192,370" size="100,100">
+(if: (history:) contains &quot;Broken-Down Pickup Truck&quot;)[](else:)[(set: $objectcount to $objectcount + 1)]</tw-passagedata><tw-passagedata pid="64" name="Scry on Truck" tags="scrying" position="1192,370" size="100,100">(if: $cornerthing is $currentroom)[I pop open the hood of our pickup truck, and take a look inside. I roll up my sleeves and get ready to get to work, and I reach for my tools.
+
+My tools aren&#39;t there.
+
+I sigh, and look at the corner.
+
+&quot;I didn&#39;t give those to you, you know. Can I have them back?&quot;
+
+I get the impression of a giggle from the corner. I don&#39;t hear anything, of course, but I wasn&#39;t expecting to.
+
+&quot;That&#39;s not an answer, you know.&quot; I chide.
+
+Caern opens the door and leans through it. He looks at me and says: &quot;Hey, have you seen Casper? We&#39;re playing a game.&quot;
+
+&quot;Yes, it&#39;s in here. It seems to think I&#39;m participating, as it has taken my tools. Without my permission!&quot;
+
+He scans the corners of the room until he sees it. &quot;Wel, that was rude! Give those tools back, Alan is working—not playing!&quot;
+
+We both get the strong, playful impression that it won&#39;t give the tools back unless we trade it something.
+
+&quot;Just give it your necklace again,&quot; I say to Caern, &quot;it loves your necklace.&quot;
+
+Caern grabs his necklace and makes a show of protecting it. &quot;No! I&#39;m afraid one of these days Casper isn&#39;t gonna give it back!&quot;
+
+There is the impression of more laughter from the corner.
+
+&quot;Are we set on Casper?&quot; I ask, &quot;I know it needs a name, but for some reason whenever I hear &#39;Casper&#39; I think dog, not person.&quot;
+
+&quot;*Dog?* Darling, I regret to inform you that you are wrong. *Casper* is *not* a *dog name*. It&#39;s a *friendly ghost!* Naming it anything else would almost be blasphemy.&quot;
+
+We both turn back to the corner, and find that the ghost is gone.
+
+&quot;Oh, looks like it moved on.&quot; observes Caern.
+
+&quot;Well, hold on, help me find it! It still has my tools!&quot;
+
+I walk past him into the house, he chuckles as he follows me.
+
+I&#39;m facing away from him, so I don&#39;t think he saw my smile.](else:)[(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I pop open the hood of our]] pickup truck(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[, and take a look inside. I roll up my sleeves and get ready to get to work, and I reach for my tools.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[My tools aren&#39;t there.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I sigh, and]] look at the corner.
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;I didn&#39;t give those to you, you know. Can I have them back?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I get the impression of a giggle from the corner. I]] don&#39;t hear anything, (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[of course, but I wasn&#39;t expecting to.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;That&#39;s not an answer, you know.&quot; I chide.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Caern opens the door and leans through it. He looks at me and says: &quot;Hey, have you seen Casper? We&#39;re playing a game.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Yes,]] it&#39;s in here. (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[It seems to think I&#39;m participating, as it has taken my tools. Without my permission!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[He scans the corners of the room until he sees it. &quot;Well, that was rude! Give those tools back, Alan is working—]]not playing(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[We both get the strong, playful impression that it]] won&#39;t give (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[the tools]] back unless (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[we]] trade it something.
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Just give it your necklace again,&quot; I say to Caern, &quot;it loves your necklace.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Caern grabs his necklace and makes a show of protecting it. &quot;No! I&#39;m afraid one of these days Casper isn&#39;t gonna give it back!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[There is the impression of more laughter from the corner.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Are we set on Casper?&quot; I ask, &quot;I know it needs a name, but for some reason whenever I hear &#39;Casper&#39; I think dog, not person.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;*Dog?* Darling, I regret to inform you that you are]] wrong. (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[*Casper* is *not* a *dog name*. It&#39;s a *friendly ghost!* Naming it anything else would almost be]] blasphemy(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[We both turn back to the]] corner(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[, and find that the ghost is]] gone.
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Oh, looks like it moved on.&quot; observes Caern.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Well, hold on, help me find it! It still has my tools!&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I walk past him into the house, he chuckles as he follows me.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I&#39;m facing away from him, so I don&#39;t think he saw my smile.]]
+
+*It looks like you don&#39;t have a strong enough connection to this item to get a proper look at its connections. You&#39;ll have to see if a specific location or object can strenghten your connection with it.*]
 
 [[Back-&gt;Broken-Down Pickup Truck]]</tw-passagedata><tw-passagedata pid="65" name="Cracked Alarm Clock" tags="intro" position="804,1099" size="100,100">A digital alarm clock with a huge crack down the middle of its display. It wasn’t plugged into the wall.
 
-You can feel the connections to the clock humming...[[scry on it?-&gt;Scry on Alarm Clock]]
+(cond: $seenradio is true, &quot;You can feel the connections to the clock humming...[[scry on it?-&gt;Scry on Alarm Clock]]&quot;, &quot;You can feel the connections tangled up around the clock...[[scry on it?-&gt;Scry on Alarm Clock]]&quot;)
 
-[[Back to inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="66" name="Scry on Alarm Clock" tags="scrying" position="914,1098" size="100,100">
+[[Back to inventory-&gt;Inventory]]</tw-passagedata><tw-passagedata pid="66" name="Scry on Alarm Clock" tags="scrying" position="909,1097" size="100,100">(if: $seenradio is true)[The 5:00 alarm goes off, waking me up. I roll over in bed and clumsily slap it until it stops beeping. The sun isn&#39;t out yet, and the room is filled with a comfortable dimness.
+
+I turn towards Alan. He&#39;s already awake.
+
+He looks *really* tired. Did he get any sleep? &quot;Hey, babe, you all right?&quot;
+
+He looks at me bleakly over our pillows. &quot;It&#39;s getting worse.&quot;
+
+Ah, yeah. &quot;Yeah, it is.&quot;
+
+&quot;I couldn&#39;t sleep, I was thinking about it too much. Our neighborhood used to be relatively stable, but that&#39;s been changing lately. Half of our neighbors have already left. Some of the houses on the block are downright uninhabitable already.&quot;
+
+&quot;Yeah.&quot; I try to nod solemnly, but the effect is reduced by my face rubbing up against my pillow. I hardly know what to say. &quot;It&#39;s...frightening. But...I can&#39;t say I want to leave. Not that I wouldn&#39;t, if we end up having to, but...&quot;
+
+Alan sighs and flops onto his back. &quot;I agree. For all its strangeness, I love this house. I love living here with you. I don&#39;t want this to end.&quot;
+
+&quot;Neither do I.&quot; I let out a small, quiet laugh as I have a thought. &quot;You know, we&#39;ve spent most of our time living in this house dealing with the supernatural. Like, how long have we been here?&quot;
+
+&quot;About 13 years, I believe.&quot;
+
+&quot;Yeah, and stuff started getting weird, like, 5 years in. It feels like this house is tangled up with all of this, in a good way. It&#39;s been almost peaceful, when we weren&#39;t worrying about the end of the world.&quot;
+
+Alan is nodding. I can&#39;t see his face, but I think he might be tearing up. &quot;And soon, we&#39;re going to have to leave it all. Make our way to one of the stable zones, like everyone else, and hope for the best.&quot;
+
+&quot;Who knows, maybe we have a stable zone right here? In this little house of ours?&quot;
+
+He lets out a quiet chuckle. &quot;Wouldn&#39;t that be nice.&quot;
+
+...
+
+There is a long pause as we lay there in silence.
+
+&quot;It might be stupid of me,&quot; I start, &quot;but I think we should stay here as long as we possibly can. There are too many memories here for me to feel comfortable just up and leaving.&quot;
+
+&quot;I think you&#39;re right.&quot; Alan says, with something that could have been a laugh or a sob. &quot;It is stupid of you, and I think we should do it anyway.&quot;
+
+That gets a laugh out of me. &quot;Until then, we can earn our keep. Keep on planting flowers on the walls, right up until the day we&#39;re gone.&quot;
+
+&quot;I think I&#39;d like that.&quot;
+
+&quot;Yeah, me too.&quot;](else:)[(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[The 5:00]] alarm (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[goes off, waking me up. I roll over in bed and clumsily slap it until it stops beeping. The sun isn&#39;t out yet, and the room is filled with a comfortable dimness.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[I turn towards Alan. He&#39;s already]] awake.
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[He looks *really* tired. Did he get any sleep? &quot;Hey, babe, you all right?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[He looks at me bleakly over our pillows.]] &quot;It&#39;s getting worse.&quot;
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Ah, yeah. &quot;Yeah, it is.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;I couldn&#39;t sleep, I was thinking about it too much. Our neighborhood]] used to be (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[relatively]] stable, (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[but that&#39;s been changing lately. Half of our neighbors have already left. Some of the houses on the block are downright]] uninhabitable (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[already.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Yeah.&quot; I try to nod solemnly, but the effect is reduced by my face rubbing up against my pillow. I hardly know what to say. &quot;It&#39;s...frightening. But...I can&#39;t say I want to leave. Not that I wouldn&#39;t, if we end up having to, but...&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Alan sighs and flops onto his back. &quot;I agree. For all its strangeness, I love this house. I love living here with you.]] I don&#39;t want this to end.(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Neither do I.&quot; I let out a small, quiet laugh as I have a thought. &quot;You know, we&#39;ve spent most of our time living in this house dealing with the]] supernatural. (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Like, how long have we been here?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;About 13 years, I believe.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Yeah, and stuff started getting weird, like, 5 years in. It feels like this]] house is tangled up with all of this(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[, in a good way. It&#39;s been almost peaceful, when we weren&#39;t worrying about the end of the world.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[Alan is nodding. I can&#39;t see his face, but I think he might be tearing up. &quot;And soon, we&#39;re going to have to leave it all. Make our way to one of the stable zones, like everyone else, and hope for the best.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Who knows, maybe we have a stable zone right here? In this little house of ours?&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[He lets out a quiet chuckle. &quot;Wouldn&#39;t that be nice.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[...]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[There is a long pause as we lay there in silence.]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;It might be stupid of me,&quot; I start, &quot;but I think we should]] stay here (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[as long as we possibly can. There are]] too many memories (text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[here for me to feel comfortable just up and leaving.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;I think you&#39;re right.&quot; Alan says, with something that could have been a laugh or a sob. &quot;It is stupid of you, and I think we should do it anyway.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[That gets a laugh out of me. &quot;Until then, we can earn our keep. Keep on planting flowers on the walls, right up until the day we&#39;re gone.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;I think I&#39;d like that.&quot;]]
+
+(text-style: &quot;blurrier&quot;)[(text-style: &quot;upside-down&quot;)[&quot;Yeah, me too.&quot;]]
+
+*It looks like you don&#39;t have a strong enough connection to this item to get a proper look at its connections. You&#39;ll have to see if a specific location or object can strenghten your connection with it.*]
 
 [[Back-&gt;Cracked Alarm Clock]]</tw-passagedata><tw-passagedata pid="67" name="Get Alarm Clock" tags="intro" position="17,1181" size="100,100">You picked up the *Cracked Alarm Clock*.
 
